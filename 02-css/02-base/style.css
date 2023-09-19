@@ -1,0 +1,112 @@
+/* Import d'une police d'écriture : */
+@font-face 
+{
+    font-family: "BlakaHollow";
+    src: url("../../ressources/fonts/BlakaHollow-Regular.ttf");
+}
+/* La racine de notre document, les règles appliqués ici représentent le document dans son entièreté */
+:root
+{
+    font-size: 2px;
+    --main-bg-color: #ABCDEF;
+    --mainTextColor: #b68f68;
+    --divTextSize: 10px;
+}
+body
+{
+    /* La taille du body dépend de son contenu,  mais si on lui applique un background-color, celui ci s'appliquera sur toute la page.*/
+    background-color: aquamarine;
+    font-size: 10px;
+}
+.target1
+{
+    font-family: BlakaHollow, 'Times New Roman', Times, serif;
+    background-color: var(--main-bg-color);
+    color: var(--mainTextColor);
+    font-size: var(--divTextSize);
+}
+.target2
+{
+    /* 
+        Les couleurs peuvent être définies par différentes façons:
+            - Par des mots clefs, mais ceux ci restent limiter à quelques couleurs.
+            - Par des valeurs hexadecimals, 6 chiffres ou lettres allant de 0 à F. précédés par un "#"
+            - Par la fonction "rgb()" qui accueil 3 nombres de 0 à 255 séparés d'une virgule.
+            - Par la fonction "hsl()" qui accueil 3 valeurs séparés d'une virgule. un degré entre 0 et 360, la saturation en pourcentage, la brillance en pourcentage.
+    */
+    background-color:#FF9C4D ;
+    color: red;
+}
+.target3
+{
+    background-color: rgb(123, 98, 237);
+    color: hsl(320, 50, 60);
+}
+.target4
+{
+    /* 
+        Il est possible d'indiquer un pourcentage de transparence à nos couleurs (excepté avec les mots clefs);
+            - pour l'hexadecimal, on ajoutera 2 characters de plus.
+            - pour le rgb on utilisera "rgba" qui prendra une quatrième valeur entre 0 et 1.
+            - pour hsl on utilisera "hsla" qui fera de même que "rgba"
+    */
+    background-color: #1868508e;
+    color: rgba(73, 42, 231, 0.3);
+}
+.target5
+{
+    /* 
+        La taille de la police, ou d'un élément, peut se préciser avec tout un tas d'unité différentes.
+        px, em, rem, cm, vh, vw, vmin, vmax, dvh, dvw, %, pc...
+
+        L'unité de base la plus souvent représenté est le "px", le pixel est conseillé pour les valeurs de petits éléments, ou vertical, On évitera de l'utiliser pour la valeur horizontale d'un gros élément.
+    */
+    font-size: 40px;
+}
+.target6
+{
+    /* 
+        em et rem sont plus adaptés à la taille de la police que d'un élément.
+        1em représente, 1 fois la taille de la police du parent.
+        1rem représente, 1 fois la taille de la police de la racine (root)
+    */
+    font-size: 1.5em;
+}
+.target7
+{
+    font-size: 1.5rem;
+}
+.target8
+{
+    /* 
+        vw, vh et leurs dérivés dépendent de la taille du viewport.
+        ils sont généralement utilisés pour la taille des éléments et non de la police comme ici.
+    */
+    font-size: 5vw;
+}
+.target9
+{
+    font-size: 5vh;
+}
+.target10
+{
+    /* 
+        vmax est un pourcentage de la taille la plus grande du viewport, sa largeur ou sa hauteur.
+        vmin est un pourcentage de la taille la plus petite.
+    */
+    font-size: 5vmax;
+}
+.target1
+{
+    /* 
+        Le pourcentage prend un pourcentage de la taille de l'élément parent. Si je dis que la largeur fait 50%, c'est 50% de la largeur de l'élément parent.
+    */
+    font-size: 50%;
+}
+.target2
+{
+    /*
+        clamp() permet d'avoir une taille qui s'adapte entre un minimum et un maximum.
+    */
+    font-size: clamp(10px, 5vw, 30px);
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site !</title>
+    <!-- Balises influençant le SEO (Search Engine Optimisation)-->
+    <meta name="author" content="Nolwenn WEBER-MARQUISET">
+    <meta name="description" content="Une super page avec les bases du HTML">
+    <meta name="keywords" content="html, head, balises, meta tag">
+    <link rel="shortcut icon" href="../ressources/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- balises sémantiques -->
+    <header id="firstTag"></header>
+    <nav></nav>
+    <main></main>
+    <aside></aside>
+    <footer></footer>
+    <!-- Balises avec règle -->
+    <section>Une section doit contenir un titre</section>
+    <article>Un article doit contenir un titre</article>
+    <p>Un paragraphe ne peut pas contenir de block</p>
+    <ul>
+        <li>Une unordered list ne peut contenir que des "li" liste item</li>
+        <li>Chaque li va créer un nouveau point</li>
+        <li>
+            <ul>
+                <li>Un li peut contenir n'importe quel bloque, même une autre liste</li>
+            </ul>
+        </li>
+    </ul>
+    <ol>
+        <li>une ordered list suit les même règles qu'une "ul"</li>
+        <li>Les puces sont remplacées par des chiffres</li>
+    </ol>
+    <!-- Les titres vont de h1 à h6, par convention on essayera de garder les plus gros avant et les plus petit après. -->
+    <h1>Gros titre</h1>
+    <h6>Petit titre</h6>
+
+    <div>Aucune règle, sémantique ou effet, la div sert juste à diviser et structurer votre page</div>
+
+    <!-- Balises inline -->
+    <p> 
+        <strong>Lorem ipsum dolor</strong> sit amet consectetur adipisicing elit. <br>
+        
+        <em>Numquam laboriosam</em> officiis <i>laudantium reiciendis</i> ad nemo minus dolorem doloribus, porro recusandae odit? <u>Sunt quis tempore ipsa</u> autem <abbr title="HyperText Markup Language">HTML</abbr> quo dolorem.
+        <!-- Les balises tel que strong, em, i... ne doivent pas être utilisées pour de la mise en forme. 
+        Elles ont chacune un sens précis qui sera indiqué aux moteurs de recherches, synthèses vocales et autres logiciels et robots. -->
+    </p>
+    <hr>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod nesciunt aperiam ex inventore quae voluptatem quas ipsam dignissimos cupiditate, libero, commodi et omnis vitae totam earum error provident deserunt ratione!
+        Amet, praesentium, ad distinctio doloremque vitae quidem harum quod blanditiis ipsum consectetur sequi similique, maiores natus consequuntur perspiciatis hic beatae aut fuga omnis impedit corporis nobis. Praesentium consequatur beatae fuga!
+        Dolores aspernatur culpa qui optio, recusandae excepturi vero quae fuga cupiditate dicta. Aliquam voluptatibus consequatur doloremque assumenda, officia culpa quidem neque doloribus nulla voluptates voluptate beatae cupiditate recusandae repellendus delectus?
+        Atque vero autem accusantium amet. Sint recusandae minima alias aut cumque nihil odio ratione facilis nulla quis eius, sapiente iure, quibusdam porro quas reiciendis iusto error praesentium exercitationem. Reprehenderit, pariatur.
+        Quae incidunt rerum soluta expedita, rem excepturi natus voluptatum, accusantium deleniti illum suscipit est quasi fuga magnam! Deserunt ipsa libero sint similique ad quidem. Accusamus incidunt quibusdam rem eos asperiores?
+        <a href="02-tableau.html">Lorem ipsum dolor</a> sit amet consectetur adipisicing elit. <a href="./03-formulaire.html">Asperiores modi </a> nesciunt minus dolorum dicta eos iste <a href="https://www.google.fr/search?q=pizza" target="_blank">consectetur repellendus!</a> Id veritatis nemo laborum architecto quam expedita eveniet reprehenderit <a href="#firstTag"> quos quidem tempore?</a>
+        <!-- Les balises "a" servent à créer des liens interne au site, externe, ou des ancres.
+        
+        Il est conseillé pour les liens externe au site d'utiliser l'attribut target="_blank" pour ouvrir la page dans un nouvel onglet -->
+    </p>
+    <p>
+        <span class="superSpan1 sp1">Lorem ipsum dolor</span> sit amet consectetur adipisicing elit. Fugit non, distinctio sit, <img src="../ressources/images/favicon.ico" alt="photo realiste d'extraterrestre" width="200" height="200" loading="lazy" decoding="async"> voluptas cumque iusto veniam nisi adipisci sequi nam debitis aut dolorum commodi nihil reiciendis repellendus perferendis consectetur veritatis.
+    </p>
+    <!-- cas particulier -->
+    <video src="../ressources/videos/Circulation.mp4" controls loop autoplay muted poster="../ressources/images/favicon.ico"></video>
+
+    <audio src="" controls loop></audio>
+
+    <video controls>
+        <source src="" type="video/mp4">
+        <source src="" type="video/x-wav">
+        <source src="" type="video/x-msvideo">
+        <p>Votre navigateur ne supporte pas les vidéos html5</p>
+    </video>
+    <iframe src="./02-tableau.html" frameborder="0"></iframe>
+    <pre>
+        Lorem, ipsum dolor sit amet consectetur         adipisicing elit. 
+                    Voluptas est fugiat laudantium, sint suscipit consequuntur? 
+        
+        
+        Laudantium repellat, id placeat perferendis ut necessitatibus cumque repellendus 
+ratione corporis nemo et maiores!
+    </pre>
+</body>
+</html>

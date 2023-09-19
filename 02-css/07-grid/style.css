@@ -1,0 +1,86 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    min-height: 100vh;
+    /* 
+        Le display grid s'applique sur le parent des éléments que l'on souhaite placer.
+    */
+    display: grid;
+    /* 
+        grid-template-rows permet d'indiquer le nombre et la taille des rangés de notre grille.
+        Chaque rangé est séparé d'un espace avec en valeur, la hauteur de cette rangée.
+
+        auto indique que la rangé prendra juste la hauteur dont elle a besoin.
+        1fr signifie "1 fraction du site", utilisée sans autre unités fr, cela lui offrira tous l'espace restant.
+    */
+    grid-template-rows: auto 1fr auto;
+}
+main
+{
+    display: grid;
+    /* 
+        grid-template-columns permet de définir le nombre et la taille des colonnes.
+        Il fonctionne comme grid-template-rows.
+
+        Si on souhaite plusieurs colonnes (ou rangés) de même taille.
+        On peut utiliser la fonction "repeat" avec en première valeur, le nombre de fois que l'on souhaite répéter, et en second la valeur.
+    */
+    grid-template-columns: repeat(5, 15%);
+    grid-template-rows: 2fr 1fr repeat(2, 120px);
+
+    /* Si la largeur de mes colonnes ne remplissent pas le conteneur.
+    Je peux espacer mes colonnes avec "justify-content" */
+    justify-content: space-evenly;
+}
+/* 
+    Par défaut, mes éléments viennent se placer dans l'ordre des cases.
+    Le premier élément, dans la première case et ainsi de suite.
+    Mais on peut venir modifier cela.
+*/
+main > div:nth-child(1)
+{
+    background: lightgreen;
+    /* Permet d'indiquer à partir de quelle colonne mon élément commence. */
+    grid-column-start: 2;
+    /* Permet d'indiquer à quelle colonne mon élément fini. */
+    grid-column-end: 5;
+    /* Permet d'indiquer à quelle rangée mon élément commence et fini. */
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+main > div:nth-child(2)
+{
+    background: lightblue;
+    /* fusion de grid-column-start et grid-column-end */
+    grid-column: 1/2;
+    /* fusion de grid-row-start et grid-row-end */
+    grid-row: 1/3;
+}
+main > div:nth-child(3)
+{
+    background: lightcoral;
+    /* Fusion des 4 avec :
+    row-start / column-start / row-end / column-end */
+    grid-area: 1/5/4/6;
+}
+main > div:nth-child(4)
+{
+    background: lightseagreen;
+    /* Plutôt qu'indiquer une rangé ou une colonne de fin, 
+    je peux utiliser le mot clef "span" pour indiquer le nombre de colonne ou de rangé qu'il doit prendre. */
+    grid-row: 3/span 2;
+    grid-column: 1/span 2;
+}
+main > div:nth-child(5)
+{
+    background-color: lightgoldenrodyellow;
+    /* Attention, on peut volontairement ou involontairement, avoir nos cases qui se superposent. */
+    grid-row: 2 / span 3;
+    grid-column: 2/span 2;
+}
+/* Les éléments non placé, iront se placer là où il reste de la place. */

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les tableaux en HTML</title>
+    <style>
+        table, th, td
+        {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>une case</td>
+            <td>une seconde case</td>
+        </tr>
+        <tr>
+            <td>case 3</td>
+            <td>case 4</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">fruit</th>
+                <th colspan="2">légume</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>cerise</td>
+                <td>banane</td>
+                <td>aubergine</td>
+                <td rowspan="2">concombre</td>
+            </tr>
+            <tr>
+                <td>Pomme</td>
+                <td colspan="2">Tomate</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">La tomate, fruit ou légume</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

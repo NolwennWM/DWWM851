@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecteur CSS</title>
+    <style>
+        /* On peut placer le CSS à trois endroits différents, le premier étant la balise style dans le head de notre page. */
+        header
+        {
+            background-color: chartreuse;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- header>(h1>a>{Super Site Grandiose !})+p>{Ce site est vraiment super} -->
+    <header>
+        <h1>
+            <a href="https://www.google.fr/search?q=carbonade" target="_blank">
+                Super Site Grandiose !
+            </a>
+        </h1>
+        <p>
+            Ce site est vraiment super
+        </p>
+    </header>
+    <!-- main>(p>lorem+span*3)+article>p>{gros article très long} -->
+    <main>
+        <p>
+            <span>Lorem ipsum</span> dolor sit amet consectetur adipisicing elit. Voluptas minima <span>repellat eius,</span> laborum quod error minus alias quidem? Esse fugiat <span>officia officiis laborum non quos ipsa</span> alias exercitationem autem. Corporis!
+        </p>
+        <article>
+            <p>
+                gros article très long
+            </p>
+        </article>
+    </main>
+    <!-- footer>(h3>{Gros Menu})+ul>li*6>{Menu $} -->
+    <footer style="background-color: blueviolet;">
+        
+        <ul>
+            <h3>
+                Gros Menu
+            </h3>
+            <li id="MenuImportant">
+                Menu 1
+            </li>
+            <li>
+                <a href="https://www.amazon.fr/s?k=hdmi">Amazon</a>
+            </li>
+            <li class="peuImportant">
+                Menu 3
+            </li>
+            <li>
+                <a href="https://www.marquiset.fr">Nolwenn</a>
+            </li>
+            <li class="peuImportant">
+                Menu 5
+            </li>
+            <li>
+                <a href="https://fr.wikipedia.org/wiki/amazonie">Wikipedia</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+    De nos jours, il est préférable de développer un site en "mobile first".
+    C'est à dire de le développer pour le format smartphone, et ensuite de l'adapter aux tablettes et ordinateurs.
+*/
+body
+{
+    background-color: bisque;
+}
+h1, h2
+{
+    text-align: center;
+}
+article
+{
+    margin: 1rem, 10px;
+    border: 1px solid grey;
+    padding: .5rem;
+}
+/* 
+    Pour avoir un site responsive, c'est à dire qui s'adapte à toute taille d'écran.
+    Le premier conseil est autant que possible, prioriser les unités tel que "%", "vh", "vw"... qui s'adapte d'elles-même à la taille des écrans ou des éléments.
+
+    Le second, est d'utiliser les média queries.
+    Ces media queries permettent d'appliquer certaines règles, uniquement à certaines conditions, par un exemple :
+        - Un break point (à partir de 600px, ou en dessous de 900px...)
+        - Un format, paysage (largeur plus grande que hauteur) ou portrait.
+        - le thème utilisé par l'utilisateur (sombre, clair)
+        - l'utilisation (pour une imprimante)
+*/
+@media screen and (min-width: 500px) 
+{
+    body
+    {
+        background-color: lightgreen;
+    }
+    article
+    {
+        display: inline-block;
+        width: 49%;
+    }
+}
+@media screen and (min-width: 900px) 
+{
+    body
+    {
+        background-color: lightblue;
+    }
+    article
+    {
+        width: 32%;
+    }
+}
+@media screen and (max-width: 700px) {}
+/* règles spécifiques à l'impression */
+@media print { .scroll{ display: none;}}
+/* règles spécifiques à l'orientation */
+@media screen and (orientation: landscape){}
+@media screen and (orientation: portrait){}
+/* Règle spécifiques à l'utilisation d'un thème par l'utilisateur */
+@media (prefers-color-scheme: dark){}
+@media (prefers-color-scheme: light){}
+
+/* ------------ compatibilités des navigateurs ------------------- */
+
+/* 
+    Le World Wide Web Consortium (W3C) s'occupe de gérer les conventions et la standardisation des technologies utilisées sur le web.
+    Malgré cela, des différences existent entre les différents navigateurs. (De moins en moins car beaucoup utilise le moteur chromium)
+
+    Certaines propriétés ou selecteurs peuvent avoir un indicateur prouvant leur fonctionnement sur un moteur unique :
+        - "-webkit-" pour chromium.
+        - "-moz-" pour firefox
+
+    Prenons l'exemple suivant dont je souhaite modifier la scrollbar:
+*/
+div.scroll
+{
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    overflow-y: auto;
+    /* Modification de la barre de scrolling chez firefox : */
+    scrollbar-color: red pink;
+    scrollbar-width: thin;
+}
+/* Modification de la barre de scrolling chez chromium */
+div.scroll::-webkit-scrollbar
+{
+    background-color: pink;
+    width: 8px;
+}
+div.scroll::-webkit-scrollbar-thumb
+{
+    background-color: red;
+}
+
+/* D'autant plus sur les nouvelles propriétés, faites attention aux tableaux de compatibilité en bas de page sur MDN/W3school ou https://caniuse.com/ */

@@ -1,0 +1,87 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul
+{
+    /* 
+        Le display flex permet de rendre des éléments plus flexible, adaptable aux différentes tailles d'écrans.
+        ! Le display flex est à mettre sur le parent des éléments que l'on souhaite déplacer.
+    */
+    display: flex;
+    /* 
+        Flex fonctionne selon un axe principal et un axe secondaire.
+        Par défaut l'axe principale est "l'horizontal" allant de gauche à droite. Mais celui ci est modifiable via la propriété "flex-direction".
+            - row (par defaut).
+            - row-reverse.
+            - column.
+            - column-reverse.
+    */
+    flex-direction: row;
+    height: 10vh;
+    /* 
+        "justify-content" qui permet de placer les éléments sur l'axe principal.
+        On peut les placers au début, à la fin, ou centrer sur l'axe.
+        Mais plus interessant, on peut les espacer avec :
+            - space-between
+            - space-around
+            - space-evenly
+    */
+    justify-content: space-between;
+    /* 
+        "flex-wrap" permet d'indiquer que si l'élément manque de place, il peut créer une nouvelle ligne (ou colonne)
+    */
+    flex-wrap: wrap;
+    /* 
+        "align-items" permet de placer les éléments sur l'axe secondaire.
+    */
+    align-items: center;
+    border: 1px solid black;
+}
+li
+{
+    width: 40vw;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: brown;
+    list-style: none;
+    text-align: center;
+}
+li:hover
+{
+    /* 
+        à la différence des autres, cette règle ne se place pas sur le parent mais sur un enfant.
+        indique le facteur d'expension d'un élément.
+    */
+    flex-grow: 1;
+}
+section
+{
+    display: flex;
+    /* flex-flow est juste une fusion entre flex-direction et flex-wrap */
+    flex-flow: column wrap;
+    height: 150px;
+    /* 
+        gap permet de faire un espacement entre les éléments.
+        c'est une fusion entre row-gap et column-gap
+    */
+    gap: 10px;
+}
+article
+{
+    width: 40%;
+    background-color: aquamarine;
+}
+article:nth-of-type(3)
+{
+    background-color: aqua;
+    /* 
+        Par défaut, tous les éléments ont un ordre de "0".
+        Chaque élément ayant le même ordre. apparaîtra comme il a été défini dans le HTML.
+        Une valeur négative fera déplacer un élément avant les autres.
+        Une valeur positive le déplacera après les autres.
+    */
+    order: -1;
+}

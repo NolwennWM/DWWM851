@@ -1,0 +1,49 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.item1
+{
+    background: blue;
+    /* Je peux aussi utiliser "grid-area" pour nommer mes éléments */
+    grid-area: header;
+}
+.item2
+{
+    background: red;
+    grid-area: menu;
+}
+.item3
+{
+    background: yellow;
+    grid-area: article;
+}
+.item4
+{
+    background: green;
+    grid-area: chaussette;
+}
+.item5
+{
+    background: pink;
+    grid-area: footer;
+}
+body
+{
+    height: 100vh;
+    display: grid;
+    /* 
+        Si nos éléments sont nommés,
+        On peut utiliser grid-template-areas pour les placer.
+        Attention de bien écrire chaque noms, et d'avoir autant de colonne sur chaque ligne.
+        chaque "" représente une ligne, chaque nom une colonne.
+    */
+    grid-template-areas: 
+    "header header header header header" 
+    "menu article article article chaussette" 
+    "menu footer footer footer footer";
+    /* Par défaut chaque ligne fait la même taille et chaque colonne aussi. Mais on peut combiner cela avec les templates rows et columns pour fixer cela */
+    grid-template-rows: 1fr 3fr 1fr;
+}
