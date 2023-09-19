@@ -6,7 +6,7 @@
 }
 .item1
 {
-    background: blue;
+    background: green;
     /* Je peux aussi utiliser "grid-area" pour nommer mes éléments */
     grid-area: header;
 }
