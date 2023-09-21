@@ -1,0 +1,91 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul
+{
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+    /* 
+        La propriété transition permet d'indiquer entre autre choses.
+        Une propriété dont la valeur va changer, et combien de temps ce changement doit prendre.
+    */
+    transition: left 1s;
+}
+li
+{
+    margin: 1rem 0;
+    display: inline-block;
+}
+button
+{
+    font-size: 3rem;
+    aspect-ratio: 1/1;
+}
+input#burger{display: none;}
+input#burger:checked ~ ul{left: 50%;}
+
+li:nth-child(1) button
+{
+    background-color: chartreuse;
+    /* transition est la fusion de toute les propriétés de transition :
+    
+    transition-property permet d'indiquer la ou les propriétés qui vont être modifiés.*/
+    transition-property: background-color, transform;
+    /* transition-duration indique la durée de la transition.
+    Si on a plusieurs propriétés, on peut les séparer d'une virgule. */
+    transition-duration: 1s, 2s;
+    /* Permet de paramétrer un délai avant le début de la transition */
+    transition-delay: 0.3s;
+    /* Permet de choisir le rythme qu'adoptera la transition.
+    On peut l'indiquer avec des mots clefs comme "linear, ease-in, ease-out..."
+    Mais aussi, des courbes de bezier
+    https://cubic-bezier.com */
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+li:nth-child(1) button:hover
+{
+    background-color: darkviolet;
+    transform: rotate(180deg);
+}
+li:nth-child(2) button
+{
+    /* Le mot clef "all" indique que toute les propriétés de l'élément seront transitionnés. */
+    transition-property: all;
+    transition-duration: 3s;
+    /* On peut aussi indiquer à notre transition de se faire par étape: */
+    transition-timing-function: steps(5, jump-start);
+}
+li:nth-child(2) button:hover
+{
+    border-radius: 50%;
+}
+li:nth-child(3) button
+{
+    /* Comme indiqué plus haut, transition est la fusion de toute les propriétés de transition et peut donc accueillir toute les valeurs.
+    Pour mettre un délai, il suffit d'indiquer une seconde valeur de temps*/
+    transition: all 1s 0.5s linear;
+    /* On verra plus souvent la transition sur l'élément de base que sur sa modification.
+    car cela permet d'avoir la transition active à l'aller et au retour.
+    Si elle est ajouté sur la modification, la transition se fera à l'aller mais pas au retour. */
+}
+li:nth-child(3) button:active
+{
+    box-shadow: 10px 50px 10px 50px red;
+}
+li:nth-child(4) button
+{
+    transition: all 1s linear;
+}
+/* Avec un effet au hover (ou autre) qui cible un élément dont la taille ou la position va changer,
+le hover peut ne plus être actif et de ce fait retourner à la normal.
+Une solution pour corriger cela, est de déplacer le hover sur un élément parent. */
+li:nth-child(4):hover button
+{
+    transform: scale(0.5);
+}
+

@@ -1,0 +1,47 @@
+h1
+{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+#container
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-content: center;
+    height: 100vh;
+}
+.hover
+{
+    border: 1px solid black;
+    width: 265px;
+}
+.hover img
+{
+    width: 150px;
+}
+.barGrise
+{
+    background-color: grey;
+    height: 20px;
+}
+@media screen and (max-width: 900px) 
+{
+    #container
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 500px) 
+{
+    #container
+    {
+        grid-template-columns: 1fr;
+    }
+    h1
+    {
+        margin-bottom: 550px;
+    }
+}
