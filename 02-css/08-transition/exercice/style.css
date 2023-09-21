@@ -1,0 +1,86 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button:nth-child(1)
+{
+    background-color: lightgray;
+    color: gray;
+    border: 5px solid gray;
+    width: 6em; 
+    height: 3em;
+}
+button:nth-child(1):hover
+{
+    transition-property: background-color, color, border;
+    transition-duration: 2s;
+    cursor: pointer;
+    color: red;
+    border: 5px solid red;
+    background-color: lightcoral;
+}
+button:nth-child(1):not(:hover)
+{
+    transition-property: transform;
+    transition-duration: 2s;
+    transform: rotateY(720deg);
+}
+.btn2
+{
+    display: flex;
+    width: 20vh;
+    justify-content: space-around;
+    align-items: center;
+    border: 4px solid orange;
+    border-radius: 30px;
+    color: white;
+    background: orange;
+    text-decoration: none;
+}
+body a .sa
+{
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: orange;
+    padding: 5px;
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    transform: rotate(90deg);
+    transition: 1s;
+}
+body > a:hover > .sa
+{
+    color: orange;
+    background: white;
+    transform: rotate(-270deg);
+}
+.btn2:hover
+{
+    border-color: white;
+}
+
+.bouton3
+{
+    background: rgb(247, 6, 247);
+    color: white;
+    box-shadow: 10px 5px 5px black;
+    border-radius: 0.5em;
+    height: 3em;
+    width: 5rem;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+}
+.bouton3:hover
+{
+    box-shadow: 5px 3px 3px black;
+}
+.bouton3:active
+{
+    transform: rotateX(720deg);
+}
