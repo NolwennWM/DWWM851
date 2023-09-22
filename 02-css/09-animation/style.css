@@ -1,0 +1,182 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    height: 100vh;
+    overflow: hidden;
+}
+.sky
+{
+    height: 100%;
+    background: linear-gradient(to right, #904E95, #E96443);
+}
+.cloud
+{
+    position: absolute;
+    top: 50%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    width: 150px; 
+    height: 150px;
+    /* TODO animation */
+    /* Le nom de la keyframe à utiliser */
+    animation-name: cloud;
+    /* La durée de l'animation */
+    animation-duration: 8s;
+    /* La direction dans laquelle l'animation est jouée */
+    animation-direction: normal;
+    /* Le nombre de fois que doit être joué l'animation */
+    animation-iteration-count: infinite;
+    /* Le rythme auquel doit être joué l'animation. */
+    animation-timing-function: ease-in-out;
+    /* un délai avant le début de l'animation */
+    animation-delay: .3s;
+}
+.cloud div
+{
+    position: absolute;
+    width: inherit; 
+    height: inherit;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    /* La propriété animation est la fusion de toute les propriétés d'animations vu au dessus. */
+    animation: darkCloud 5s linear infinite;
+}
+.part1{ top: -35%;}
+.part2{left: 35%;}
+.part3{left: -35%;}
+/* 
+    Pour définir une animation, on utilise la @rule "@keyframes"
+    suivi d'un identifiant libre de choix.
+*/
+@keyframes cloud 
+{
+    /* 
+        On trouvera dans ces keyframes,
+        deux mots clefs "from" et "to" qui représentent l'état au début de l'animation et à sa fin.
+        ils peuvent être remplacé par "0%" et "100%"
+        Parfois from est même optionnel.
+    */
+    from
+    {
+        right: -30vw;
+        height: 5px;
+        width: 5px;
+    }
+    /* On peut ajouter autant d'étape clef que l'on veut sous forme de pourcentage */
+    30%
+    {
+        top: 100vh;
+    }
+    70%
+    {
+        top: 100px;
+    }
+    80%
+    {
+        height: 50px;
+        width: 50px;
+        right: 50vw;
+    }
+    to
+    {
+        right: 100vw;
+        height: 250px;
+        width: 250px;
+    }
+}
+@keyframes darkCloud 
+{
+    0%{background-color: grey;}
+    50%{background-color: whitesmoke;}
+    100%{background-color: grey;}
+}
+/* ----------------Scrolling animation -----------
+Attention cette propriété est en cours de développement et donc pas forcément géré par tous les navigateurs.
+Elle permet de non plus avoir une animation dépendante d'une durée mais du scrolling.
+0% représentera un scrolling à son début.
+100% le scrolling à sa fin.
+*/
+@keyframes scrollme 
+{
+    from{scale: 0 1;}
+    to{scale: 1 1;}
+}
+@keyframes scrollus 
+{
+    from
+    {
+        left: -20px;
+        rotate: 0;
+    }
+    to
+    {
+        left: 100vw;
+        rotate: 1440deg;
+    }
+}
+@keyframes bounce
+{
+    from
+    {
+        translate: -100% 0;
+        scale: 1.2 0.8;
+    }
+    10%{scale: 1 1;}
+    50%{translate: -100% -100%;}
+    90%{scale: 1 1;}
+    to
+    {
+        translate: -100% 0;
+        scale: 1.2 0.8;
+    }
+}
+body.scroll
+{
+    overflow: auto;
+    height: auto;
+}
+.scroll p
+{
+    margin-bottom: 20vh;
+}
+.scroll header
+{
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background: lightcyan;
+}
+.scroll .progress
+{
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: green;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scrollme auto linear;
+    /* La durée de l'animation étant en auto, il va se baser sur sa timeline
+    timeline que l'on indique ici avec la fonction scroll qui par défaut ira chercher le scrolling du parent le plus proche */
+    animation-timeline: scroll();
+}
+.scroll .ball
+{
+    translate: -100% 0;
+    position: absolute;
+    bottom: 20px;
+    border-radius: 50%;
+    background-image: radial-gradient(at 30% 30%, rgb(251, 199, 199), rgb(255, 140, 105));
+    width: 20px;
+    aspect-ratio: 1/1;
+    /* animation: scrollus auto linear; */
+    animation: scrollus auto linear, bounce 1s linear infinite;
+    /* animation-timeline: scroll(); */
+    animation-timeline: scroll(), auto;
+}
