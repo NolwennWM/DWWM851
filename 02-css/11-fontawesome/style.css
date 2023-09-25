@@ -1,0 +1,13 @@
+*{
+    /* font-awesome est une police d'écriture,
+    donc pour changer la taille des icones, on utilise "font-size" 
+    et color pour sa couleur*/
+    font-size: 100px;
+    color: green;
+    /* width et height changeront la taille de l'image, et du svg (attention par défaut, les svg de font awesome ont un attribut "height" qui aura la priorité) */
+    width: 200px;
+    height: 200px;
+    /* fill est une propriété unique aux SVG et conditionne leur couleur de remplissage */
+    fill: aqua;
+    /* On notera que le svg importé par une balise "img" n'est pas affecté par "fill" */
+}
