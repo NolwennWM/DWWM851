@@ -1,0 +1,25 @@
+// "..." permet d'avoir autant de paramètre que l'on souhaite. ils seront tous rangé dans la variable qui précède.
+@mixin liste($li...)
+{
+    // "@debug" permet d'afficher une information ou un message dans le terminal
+    @debug $li;
+    /* 
+        @for permet de faire une boucle, allant d'une certaine valeur à une autre.
+        length() permet de récupérer la taille d'une liste.
+    */
+    @for $i from 0 to length($li)
+    {
+        // nth() permet de récupérer un élément d'une liste.
+        @debug $i, nth($li, $i+1);
+        // #{} permet d'afficher du texte dans mon css.
+        #{nth($li, $i+1)}
+        {
+            font-size: 30px + $i*10;
+        }
+    }
+}
+ul
+{
+    background-color: cornflowerblue;
+    @include liste(".truc1", ".truc2", ".truc3", ".truc4", ".truc5")
+}

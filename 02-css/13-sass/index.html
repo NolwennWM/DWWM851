@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS / SCSS</title>
+    <link rel="stylesheet" href="./css/test.css">
+</head>
+<body>
+    <header>
+        <h1>Les bases de SASS et SCSS</h1>
+    </header>
+    <main>
+        <ul>
+            <li>
+                Pour installer SASS, on utilisera NPM. <br>
+                <code>npm install -g sass</code>
+            </li>
+            <li><a href="https://www.windows8facile.fr/powershell-execution-de-scripts-est-desactivee-activer/" target="_blank">En cas d'erreur</a></li>
+            <li>
+                la commande pour compiler du sass/scss en css est <br>
+                <code>sass nomDuFichier.scss nomdufichier.css</code>
+                Si la commande n'est pas reconnu, tentez de mettre "npx" avant.
+            </li>
+            <li>
+                Pour éviter de retaper la commande à chaque fois, on peut utiliser l'option "--watch" pour que le terminal reste en surveillance.
+                <code>sass --watch nomDuFichier.scss nomdufichier.css</code>
+            </li>
+            <li>
+                Pour surveiller tout un dossier :
+                <code>sass --watch nomDuDossierSource/:nomDuDossierCible/</code>
+            </li>
+            <li>
+                On peut minimiser directement le CSS avec:
+                <code>sass --watch nomDuDossierSource/:nomDuDossierCible/ --style compressed</code>
+            </li>
+        </ul>
+        <section>
+            <h2>SASS</h2>
+            <p>
+                La principale différence entre SASS et SCSS est la syntaxe. <br>
+                En premier SASS fut créé, avec une syntaxe plus raccourci, se rapprochant de celle de Python, sans accolade ou ";".
+                Elle se base entièrement sur l'indentation. <br>
+            </p>
+        </section>
+        <section class="scss">
+            <h2>SCSS</h2>
+            <p>
+                Les fonctionnalités de SASS, plaisant à beaucoup de monde, mais sa syntaxe en rebutant tout autant. <br>
+                Il fut créé SCSS, qui utilise toute les fonctionnalités de SASS mais avec la syntaxe de CSS.
+            </p>
+        </section>
+    </main>
+    <div class="test">
+        <div class="copy">&copy;</div>
+        <div class="menu">Menu</div>
+        <ul>
+            <li class="truc1">
+                truc 1
+            </li>
+            <li class="truc2">
+                truc 2
+            </li>
+            <li class="truc3">
+                truc 3
+            </li>
+            <li class="truc4">
+                truc 4
+            </li>
+            <li class="truc5">
+                truc 5
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+@charset "UTF-8";
+ul {
+  background-color: cornflowerblue;
+  /* 
+      @for permet de faire une boucle, allant d'une certaine valeur à une autre.
+      length() permet de récupérer la taille d'une liste.
+  */
+}
+ul .truc1 {
+  font-size: 30px;
+}
+ul .truc2 {
+  font-size: 40px;
+}
+ul .truc3 {
+  font-size: 50px;
+}
+ul .truc4 {
+  font-size: 60px;
+}
+ul .truc5 {
+  font-size: 70px;
+}
+
+h1 {
+  color: red;
+  font-style: italic;
+}
+
+h2 {
+  color: gray;
+}
+
+/* Le nesting permet d'inclure un selecteur CSS, dans un autre. */
+section.sass {
+  background-color: aquamarine;
+}
+section.sass h2 {
+  background-color: brown;
+  color: chartreuse;
+}
+section.sass h2:hover {
+  scale: 1.5;
+}
+
+/* 
+    Avant même que les variables CSS existent, SASS avait ses propres variables.
+    Elles doivent commmencer par un $
+*/
+.scss, header {
+  background-color: violet;
+}
+
+/* 
+    extends permet de reprendre un morceau de CSS, et de le réutiliser à plusieurs endroits.
+    ils commencent par un "%" suivi d'un nom.
+*/
+main ul, header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+    Pour utiliser mon "extends" j'utiliserais "@extend" suivi du nom de celui ci.
+*/
+/* 
+    Les mixins ressemblent aux extends, à la différence, qu'ils peuvent prendre, des paramètres.
+    Pour les déclarer, on utilisera :
+        @mixin unNom(paramètre1, paramètre2...){contenu de la mixin}
+*/
+/* 
+    Pour utiliser une mixin, on utilisera "@include"
+    suivi du nom de la mixin, de parenthèse contenant les différents paramètres obligatoires.
+ */
+.copy {
+  font-size: 4rem;
+  background-color: mediumpurple;
+  position: absolute;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.menu {
+  font-size: 3rem;
+  background-color: dodgerblue;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: translate(-50%, 100%);
+}
+
+/* 
+    Certaines fonctions sont directement disponible dans SASS,
+    Mais on peut aussi créer les notres
+    à la différence d'une mixin, 
+    elle n'affichera pas de css, mais retournera une valeur.
+*/
+.copy {
+  color: #1affff;
+}
+
+.copy {
+  width: 5rem;
+  height: 5rem;
+  /* 
+      Avec SASS, nous pouvons conditionner certaines valeurs,
+      par exemple ici, nous allons dire, que "si" la hauteur et la largeur, sont les même, alors nous allons effectuer une action, "sinon" on en fera une autre
+  */
+  border-radius: 50%;
+}
+
+.menu {
+  width: 10rem;
+  height: 5rem;
+  /* 
+      Avec SASS, nous pouvons conditionner certaines valeurs,
+      par exemple ici, nous allons dire, que "si" la hauteur et la largeur, sont les même, alors nous allons effectuer une action, "sinon" on en fera une autre
+  */
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=test.css.map */
