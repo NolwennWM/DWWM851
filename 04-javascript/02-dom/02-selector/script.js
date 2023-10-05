@@ -68,5 +68,28 @@ const h = header.querySelector('h1');
 
 // ? ------------- Quelques Selecteurs Bonus ----------------
 
+// Selectionne le prochain élément frère en HTML, ici le main.
+console.log(header.nextElementSibling);
+// Selectionne ce qui suit dans le html, ici le saut à la ligne et l'indentation.
+console.log(header.nextSibling);
+// Selectionne l'élement HTML précédent, ici le second li.
+console.log(lis2[2].previousElementSibling);
+// retourne un objet HTMLCollection contenant tous les enfants directe
+console.log(header.children);
+// Retourne le parent de l'élément HTML
+console.log(lis[2].parentElement, header.parentElement);
+// Retourne le parent le plus proche qui correspond au selecteur CSS.
+console.log(lis[2].closest("footer"));
 
 // ? ------------- Supprimer ou Déplacer ----------------
+// Pour déplacer un élément, il suffit de l'append ailleurs.
+header.append(lis2[0]);
+// remove supprime l'élément du HTML.
+lis2[2].remove();
+// Mais il existe toujours dans la variable JS.
+console.log(lis2[2]);
+
+// Il existe aussi pour supprimer :
+// header.removeChild(h);
+
+// lis2[1].parentElement.append(lis2[2]);
