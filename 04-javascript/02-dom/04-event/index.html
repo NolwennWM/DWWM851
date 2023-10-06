@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les écouteurs d'évènement</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <!-- (.modal.m2.hidden>(h2>{Santé})+(p>lorem)+(button>{Bidule})+button>{fermer la modale})+(header>h1>{Ceci n'a aucun sens})+(nav>ul>(li.menu$*4>{Menu $})+li.menu5>a[href="https://www.google.fr"]>{Menu 5})+(main>(.div1>input:text+br+button>{Clique Moi !})+(.div2>input:color+br+button>{Clique Moi !})+(.div3>button>{Clique Moi !})+.div4>.grandParent>.parent>.enfant>button>{Clique Moi !})+footer>span.endOfFile>{C'est la fin du M... Fichier !} -->
+    <div class="modal m2 hidden">
+        <h2>
+            Santé
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quasi provident, quae culpa, et praesentium similique aut iure odit unde sunt porro voluptatibus cupiditate reprehenderit facere aliquid? Facere, in ab!
+        </p>
+        <button>
+            Bidule
+        </button>
+        <button>
+            fermer la modale
+        </button>
+    </div>
+    <header>
+        <h1>
+            Ceci n'a aucun sens
+        </h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="menu1">
+                Menu 1
+            </li>
+            <!-- On peut aussi ajouter un évènement directement dans le HTML, il faudrat par contre explicitement lui donner le paramètre "event" si on souhaite l'utiliser. -->
+            <li class="menu2" onclick="test(event)">
+                Menu 2
+            </li>
+            <li class="menu3">
+                Menu 3
+            </li>
+            <li class="menu4">
+                Menu 4
+            </li>
+            <li class="menu5">
+                <a href="https://www.google.fr">
+                    Menu 5
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="div1">
+            <input type="text" name="" id="">
+            <br>
+            <button>
+                Clique Moi !
+            </button>
+        </div>
+        <div class="div2">
+            <input type="color" name="" id="">
+            <br>
+            <button>
+                Clique Moi !
+            </button>
+        </div>
+        <div class="div3">
+            <button>
+                Clique Moi !
+            </button>
+        </div>
+        <div class="div4">
+            <div class="grandParent">
+                <div class="parent">
+                    <div class="enfant">
+                        <button>
+                            Clique Moi !
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <span class="endOfFile">
+            C'est la fin du M... Fichier !
+        </span>
+    </footer>
+</body>
+</html>
