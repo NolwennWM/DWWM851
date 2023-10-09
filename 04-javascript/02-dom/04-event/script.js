@@ -90,3 +90,36 @@ input1.addEventListener("input", e=>{
         ElementHTML.addEventListener("event", function, {option:valeur});
 */
 btn1.addEventListener("click",()=>h1.textContent=input1.value,{once:true});
+
+const div4 = document.querySelector('.div4');
+const gp = div4.querySelector('.grandParent');
+const pa = div4.querySelector('.parent');
+const en = div4.querySelector('.enfant');
+
+/* 
+    Si plusieurs évènements sont déclenchés par une même action (par exemple un clique).
+    Alors l'ordre sera défini, du parent le plus proche au plus éloigné.
+
+    JS fonctionne en deux phases, une phase de "capture" où il vérifie les évènements à déclencher allant des parents vers les enfants.
+    Et une phase de "bulle" qui remonte en activant les évènements.
+*/
+div4.addEventListener("click", ()=>console.log("div4"), {capture: true});
+gp.addEventListener("click", ()=>console.log("gp"));
+pa.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    console.log("pa");
+});
+en.addEventListener("click", ()=>console.log("en"));
+/* 
+    L'option "{capture:true}" permet d'activer l'évènement lors de la phase de capture, donc avant ceux en phase de bulle.
+
+    Ajouter un "event.stopPropagation()" dans une fonction, permet d'empêcher l'execution des évènements qui devraient être activé par la suite.
+*/
+const menu5 = document.querySelector('.menu5 a');
+menu5.addEventListener("click", e=>e.preventDefault());
+
+/* 
+    "event.preventDefault()" permet d'annuler l'action par défaut de cet évènement.
+        Un clique sur un lien ne redirigera pas.
+        Une soumission de formulaire ne sera pas effectué...
+*/
