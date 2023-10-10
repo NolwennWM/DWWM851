@@ -36,3 +36,81 @@ footer
     position: absolute;
     transition: width .3s;
 }
+.clock
+{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../../ressources/images/cadran.jpg), radial-gradient(circle, rgb(37, 73, 90) 0%, rgb(25, 48, 60) 11%, rgba(9, 25, 33, 1) 38%);
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35), inset 0 -15px 15px #191919, inset 0 15px 15px #191919;
+}
+.clock::before
+{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 20;
+}
+.hour, .min, .sec
+{
+    position: absolute;
+}
+.hour, .hr
+{
+    width: 160px;
+    height: 160px;
+}
+.clock .min, .mn
+{
+    width: 192px;
+    height: 192px;
+}
+.clock .sec, .sc
+{
+    width: 230px;
+    height: 230px;
+}
+.hr, .mn, .sc
+{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+.hr::before
+{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background-color: yellow;
+    z-index: 8;
+    border-radius: 6px 6px 0 0;
+}
+.mn::before
+{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: black;
+    z-index: 9;
+    border-radius: 6px 6px 0 0;
+}
+.sc::before
+{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background-color: black;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
