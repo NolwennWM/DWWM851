@@ -80,9 +80,39 @@ function indicatorAnimation()
     /* 
         scrollY représente le nombre de pixel qui ont été scrollé
         offsetTop représente la position entre le haut de la page et le haut de notre élément.
+        Notre condition ici indique si le main a atteint le haut de la page.
     */
     if(window.scrollY > main.offsetTop)
     {
+        // console.log("true");
+        /* 
+            'scrollHeight' représente la hauteur de l'élment incluant le padding vertical.
+            'nombre.toFixed(n)' retourne un string correspondant au nombre le précédent avec "n" chiffre après la virgule.
 
+            Notre calcul suivant indique un chiffre entre 0 et 1 indiquant à quel point on a scrollé.
+        */
+        const prc = ((window.scrollY - main.offsetTop)/main.scrollHeight).toFixed(2);
+        console.log(prc);
+        indicator.style.transform = `scaleX(${prc})`;
+    }
+    else
+    {
+        console.log("false");
+        indicator.style.transform = `scaleX(0)`;
     }
 }
+/* 
+    On peut arrêter l'observation d'un élément avec :
+        variableObserver.unobserve(ElementHTML)
+    ici on aurait :
+        observer.unobserve(main);
+
+    On peut arrêter toute observation avec :
+        variableObserver.disconnect()
+
+    Chaque observer étant lié à une fonction callback,
+    Si on a plusieurs observation au fonctionnement totalement différent,
+    Il vaut mieux faire un nouvel observer pour chacun.
+
+    Avec un fonctionnement ressemblant, il existe aussi le "MutationObserver" qui détecte les changements dans le DOM.
+*/
