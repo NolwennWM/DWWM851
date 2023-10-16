@@ -16,6 +16,10 @@ main p
     margin: 0 auto;
     padding: 100px 20px;
     line-height: 1.4;
+    /* Exercice : */
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: transform 0.5s linear;
 }
 main p:nth-child(even)
 {

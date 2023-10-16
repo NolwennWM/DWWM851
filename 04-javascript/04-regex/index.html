@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Regex</title>
     <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="./exercice/script.js" defer></script>
 </head>
 <body>
-    
+    <form action="" method="get">
+        <fieldset>
+            <legend>Coordonnées</legend>
+            <label for="telephone">Téléphone :</label>
+            <input type="tel" name="tel" id="telephone">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </fieldset>
+        <fieldset>
+            <legend>Identifiants</legend>
+            <label for="user">Nom d'Utilisateur :</label>
+            <input type="text" name="username" id="user">
+            <label for="pass">Mot de passe :</label>
+            <input type="password" name="password" id="pass">
+            <div class="bar">
+                <div class="progress"></div>
+            </div>
+            <label for="passBis">Confirmation du mot de passe :</label>
+            <input type="password" name="passwordBis" id="passBis">
+        </fieldset>
+        <input type="submit" value="Inscription">
+    </form>
 </body>
 </html>
