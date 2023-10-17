@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Session et Local Storage</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./script.js" defer></script>
+    <!-- <script src="./script.js" defer></script> -->
+    <script src="./exercice/script.js" defer></script>
 </head>
 <body>
     <!-- (header>(h1>{Jouons avec les thèmes})+(a[href="page2.html"]>{Page 2})+label[for="darkTheme"].switch>input:checkbox#darkTheme+span.slider.round)+main>p>lorem -->
@@ -16,6 +17,16 @@
             <input type="checkbox" id="darkTheme">
             <span class="slider round"></span>
         </label>
+        <!-- exercice -->
+        <label for="all" class="switch2">
+            <select name="all" id="all">
+                <option class="blue" value="blue">bleu</option>
+                <option class="red" value="red">rouge</option>
+                <option class="green" value="green">vert</option>
+            </select>
+        </label>
+        <button id="bouton-changer-couleur">Changer les couleurs</button>
+        <!-- fin exercice -->
     </header>
     <main>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore recusandae laborum, cum necessitatibus distinctio culpa beatae ipsa aliquam accusamus officia sunt tenetur, rerum quidem quas expedita eius magni quia eveniet.</p>
