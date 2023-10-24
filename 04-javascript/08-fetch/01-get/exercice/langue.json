@@ -1,0 +1,12 @@
+{
+    "langue":[
+        {
+            "name": "français",
+            "para": "Le français c'est trop bien car je suis né(e) en France"
+        },
+        {
+            "name": "english",
+            "para": "English is so cool, cause there is not conjugation"
+        }
+    ]
+}

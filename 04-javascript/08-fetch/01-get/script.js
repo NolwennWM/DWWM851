@@ -99,3 +99,4 @@ function handleFetch(response)
         console.error(response.statusText);
     }
 }
+console.log("fin du code");
