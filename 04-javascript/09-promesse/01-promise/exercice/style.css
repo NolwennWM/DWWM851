@@ -1,0 +1,34 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body 
+{
+    height: 100vh;
+    width: 100%;
+}
+.tricolore
+{
+    width: 300px;
+    height: 600px;
+    background-color: black;
+    margin: 20px auto 0 auto;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.tricolore > div
+{
+    width: 50%;
+    background-color: grey;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.tricolore > div.green
+{
+    background-color: green;
+}
