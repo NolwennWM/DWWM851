@@ -66,9 +66,9 @@ console.log(synchrone(), asynchrone());
 async function burger()
 {
     console.log(await pain2());
-    console.log(await sauce2());
+    await sauce2();
     console.log(await viande2());
-    console.log(await salade2());
+    await salade2();
     console.log("Mon burger est terminé");
 }
 burger();
@@ -92,5 +92,5 @@ function viande2()
 {
     return new Promise(resolve=>setTimeout(()=>resolve("La viande est grillée et placée"),3000));
 }
-function sauce2(){return new Promise(resolve=>resolve("La sauce est versée"))}
-function salade2(){return new Promise(resolve=>resolve("La salade est placée"))}
+async function sauce2(){console.log("La sauce est versée")}
+async function salade2(){console.log("La salade est placée")}
