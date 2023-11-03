@@ -9,6 +9,11 @@ const Slider = {
     },
     time:0,
     create(imgs){
+        this.slider = {
+            dots:[],
+            items:[],
+            btns: []
+        }
         // Crée mon slider.
         const container = document.createElement("div");
         container.classList.add("slider-container");
