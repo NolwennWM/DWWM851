@@ -9,7 +9,13 @@
 </head>
 <body>
     <!-- TODO faire mes customs elements : -->
-
+    <super-card></super-card>
+    <super-card>
+        <span slot="title">La Vie des Pingouins</span>
+        <p slot="text">
+            <strong>Lorem ipsum dolor sit amet consectetur,</strong> adipisicing elit. Saepe natus dolorem aliquam molestias ex similique, eligendi fugiat at nulla quasi! Minus rerum vitae, saepe suscipit deserunt soluta omnis repellendus provident?</p>
+        <span slot="btn">Super Produit !</span>
+    </super-card>
     <!-- Exemple sans shadowDOM -->
     <template id="blog">
         <article>
@@ -40,10 +46,9 @@
             }
         </style>
         <div>
-            <!-- TODO ajouter les slots -->
-            <h1></h1>
-            <p></p>
-            <button></button>
+            <h1><slot name="title">Mon Super Titre</slot></h1>
+            <p><slot name="text">Mon Super Text</slot></p>
+            <button><slot name="btn">Mon Super Bouton</slot></button>
         </div>
     </template>
 </body>
