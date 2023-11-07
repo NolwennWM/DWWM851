@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les templates et slots</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./script.js" defer></script>
+</head>
+<body>
+    <!-- TODO faire mes customs elements : -->
+
+    <!-- Exemple sans shadowDOM -->
+    <template id="blog">
+        <article>
+            <div>
+                <h2>title</h2>
+                <p>text</p>
+                <a href="#">src</a>
+            </div>
+        </article>
+    </template>
+    <!-- Exemple avec shadowDOM -->
+    <template id="card">
+        <style>
+            div
+            {
+                display: inline-block;
+                width: 25vw;
+                border: 2px solid black;
+                border-radius: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+                padding: 1rem;
+            }
+            h1{margin-top: 0;}
+            button
+            {
+                text-align: center;
+                background-color: lightgreen;
+            }
+        </style>
+        <div>
+            <!-- TODO ajouter les slots -->
+            <h1></h1>
+            <p></p>
+            <button></button>
+        </div>
+    </template>
+</body>
+</html>
