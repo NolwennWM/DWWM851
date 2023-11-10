@@ -35,7 +35,7 @@
     Et comme avec SCSS, il est possible de demander à typescript de surveiller nos fichiers. Cela afin de les compiler automatiquement à chaque sauvegarde.
     * (npx) tsc --watch
 */
-const btn = document.querySelector("#compte");
+const btn = document.querySelector("#compte") as HTMLElement;
 let i = 0;
 btn.addEventListener("pointerdown", ()=>{
     i++;
