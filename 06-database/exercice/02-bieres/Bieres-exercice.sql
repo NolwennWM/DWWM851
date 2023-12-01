@@ -37,7 +37,7 @@
 --  assujetti à la TVA. (8263 résultats attendus avec pour les tickets 1, 2 et 3 des totaux égaux à "601.40", "500.05" et "513.33")
 
 --  17. Donner le C.A. par année. (3 résultats attendus : 
--- 2014: "585092.90", 2015: "1513659.30", 2016: "2508155.68")
+-- 2014: "585094.47", 2015: "1513663.13", 2016: "2508162.52")
 
 --  18. Lister les quantités vendues de chaque article pour l’année 2016. (1960 résultats attendues (ou 3922))
 
