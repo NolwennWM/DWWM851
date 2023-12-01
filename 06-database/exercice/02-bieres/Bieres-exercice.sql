@@ -11,7 +11,7 @@
 
 --  6. Quelles sont les tickets émis entre les mois de mars et avril 2014 ? (166 résultats attendus)
 
---  7. Quelles sont les tickets émis au mois de mars et juin 2014 ? (819 résultats attendus)
+--  7. Quelles sont les tickets émis au mois de mars et juin 2014 ? (174 résultats attendus)
 
 --  8. Afficher l’id et le nom des bières classée par couleur. (3922 résultats attendus, vous pouvez afficher la couleur pour vérifier votre résultat)
 
