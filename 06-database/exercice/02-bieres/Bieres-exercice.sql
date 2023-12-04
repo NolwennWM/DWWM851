@@ -187,12 +187,26 @@ order by qte desc;
 
 --  LES BESOINS DE MISE A JOUR
 --  32. Appliquer une augmentation de tarif de 10% pour toutes les bières ‘Trappistes’ de couleur ‘Blonde’ (Résultat attendu : 22 lignes modifiées)
-
+UPDATE article a INNER JOIN couleur c ON a.ID_Couleur = c.ID_Couleur INNER JOIN type t ON a.ID_TYPE = t.ID_TYPE SET a.PRIX_ACHAT = (SELECT a.PRIX_ACHAT)*1.10 WHERE c.NOM_COULEUR = "Blonde" AND t.NOM_TYPE = "Trappiste";
+-- OU
+UPDATE article SET PRIX_ACHAT = PRIX_ACHAT * 1.1 WHERE ID_TYPE = (SELECT ID_TYPE FROM type WHERE NOM_TYPE = "Trappiste") and id_couleur = (SELECT ID_Couleur FROM couleur WHERE NOM_COULEUR = "Blonde");
 --  33. Mettre à jour le degré d’alcool des toutes les bières n’ayant pas cette information.
 --  On y mettra le degré d’alcool de la moins forte des bières du même type et de même couleur. (6 lignes modifiées ou 28)
-
+UPDATE article as a1 SET a1.TITRAGE = (SELECT MIN(a2.TITRAGE) FROM article as a2 WHERE a2.TITRAGE is NOT NULL AND a1.ID_TYPE = a2.ID_TYPE and a1.ID_Couleur = a2.ID_Couleur) WHERE a1.TITRAGE is NULL;
 -- VERSION compliqué qui prend en compte couleur et type séparé :
-
+UPDATE article a SET TITRAGE = 
+IF((SELECT MIN(TITRAGE) FROM article WHERE a.ID_Couleur = ID_Couleur AND a.ID_TYPE = ID_TYPE) IS NOT NULL,
+  	(SELECT MIN(TITRAGE) FROM article WHERE a.ID_Couleur = ID_Couleur AND a.ID_TYPE = ID_TYPE),
+  IF((SELECT MIN(TITRAGE) FROM article WHERE a.ID_TYPE = ID_TYPE) IS NOT NULL,
+    (SELECT MIN(TITRAGE) FROM article WHERE a.ID_TYPE = ID_TYPE),
+    IF((SELECT MIN(TITRAGE) FROM article WHERE a.ID_Couleur = ID_Couleur) IS NOT NULL,
+      (SELECT MIN(TITRAGE) FROM article WHERE a.ID_Couleur = ID_Couleur),
+      (SELECT MIN(TITRAGE) FROM article)))) 
+WHERE TITRAGE IS NULL;
 --  34. Suppression des bières qui ne sont pas des bières ! (type ‘Bière Aromatisée’) (262 lignes supprimées)
-
+DELETE FROM article WHERE ID_TYPE = (SELECT ID_TYPE FROM type WHERE NOM_TYPE = "Bière Aromatisée")
 --  35. Supprimer les tickets qui n’ont pas de ventes.(3 lignes supprimées)
+DELETE
+FROM ticket
+WHERE concat(ANNEE, NUMERO_TICKET) NOT IN
+    (SELECT concat(ANNEE, NUMERO_TICKET) FROM ventes);
