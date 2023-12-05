@@ -311,5 +311,58 @@ var_dump(5<>'5');
 echo "<br> 5!=='5' : ";
 var_dump(5!=='5');
 
+// Il est possible de les combiner :
+echo "<br> 5<3 && 4>2 : ";
+var_dump(5<3 && 4>2); 
+// && peut aussi s'écrire and
+echo "<br> 5<3 and 4>2 : ";
+var_dump(5<3 and 4>2); 
 
+echo "<br> 5<3 || 4>2 : ";
+var_dump(5<3 || 4>2); 
+// || peut aussi s'écrire or
+echo "<br> 5<3 or 4>2 : ";
+var_dump(5<3 or 4>2); 
+
+// Celle ci répond "true" si une seule des deux est "true"
+echo "<br> 5<3 xor 4>2 : ";
+var_dump(5<3 xor 4>2); 
+
+// "!" permet d'inverser le résultat :
+echo '<br>!$t, !$f :';
+var_dump(!$t, !$f);
+
+# -----------------------------------------------
+echo "<hr><h1>Les variables Superglobals.</h1>";
+/* 
+    Certaines variables que l'on nomme superglobals sont accessible n'importe où dans votre code PHP, et défini par défaut.
+
+        $GLOBALS
+        # stock toute les variables globales définie (par vous ou php)
+
+        $_SERVER
+        # contient toutes les informations du serveur, des headers ou de l'url.
+
+        $_REQUEST
+        # Contient les même informations que $_POST, $_GET, $_COOKIE entre autre
+
+        $_POST
+        # Contient toute les informations envoyé en POST (par un formulaire par exemple)
+
+        $_GET
+        # Contient tout ce qui se trouve après le point d'interogation dans l'URL
+
+        $_FILES
+        # Contient tout ce qui se trouve dans les fichiers téléversés
+
+        $_COOKIE
+        # Contient les informations stockées en cookie
+
+        $_ENV
+        # Contient les variables d'environnement
+
+        $_SESSION
+        # Contient les informations stockées en session
+*/
+echo '<pre>'.print_r($_ENV, 1).'</pre>';
 ?>
