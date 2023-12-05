@@ -204,4 +204,112 @@ echo $x++, "--> $x <br>";
 echo ++$x, "--> $x <br>";
 echo $x--, "--> $x <br>";
 echo --$x, "--> $x <br>";
+
+# -----------------------------------------------
+echo "<hr><h1>Les tableaux !</h1>";
+// Originellement un tableau se créait ainsi :
+$a = array("banane", "pizza", "avocat");
+// Mais maintenant on peut simplement faire :
+$b = ["banane", "pizza", "avocat"];
+// Pour afficher un tableau, on ne peut pas faire d'echo :
+// echo $a;
+var_dump($a);
+// Pour selectionner un élément d'un tableau, on utilisera l'index de celui ci:
+echo "<br>J'aime la $a[0]!<br>";
+// Pour connaître la taille d'un tableau, on utilisera la fonction count()
+echo count($a), "<br>";
+// Pour ajouter un élément à mon tableau :
+$a[] = "fraise";
+/* 
+    En PHP, les tableaux sont par défaut indexer via des nombres.
+    Mais l'on peut créer ce que l'on nomme des tableaux associatif.
+    C'est à dire un tableau où les indexes ne sont pas des nombres, mais des strings.
+*/
+$person = ["prenom"=>"Maurice", "age"=>52];
+// Pour afficher les données, on n'utilisera plus les chiffres mais ces strings
+echo "Je suis ", $person["prenom"], " et j'ai ", $person["age"], " ans.<br>";
+// Biensûr les tableaux peuvent être multidimensionnnel:
+$person["loisir"] = ["pétanque", "bowling"];
+echo '<pre>'.print_r($person, 1).'</pre>';
+// Pour afficher les données d'un tableau de ce genre, on accolera les []
+echo $person["loisir"][0], "<br>";
+// Pour supprimer une entrée dans le tableau, on utilisa la méthode unset():
+unset($person["age"]);
+var_dump($person);
+// Ce qui ne pose aucun problème sur un tableau associatif, mais sur un indexé :
+echo "<br>";
+unset($a[1]);
+var_dump($a);
+echo "<br>";
+// On se retrouve avec un trou, Mais on peut réparer cela soit en réindexant tout dans un nouveau tableau :
+$a = array_values($a);
+var_dump($a);
+echo "<br>";
+/* 
+    Soit on supprimera un élément avec array_splice()
+    Celui ci prendra en premier argument, le tableau, 
+    en second l'index à partir duquel supprimer,
+    en troisième, combien d'élément supprimer
+*/
+array_splice($a, 1, 1); // Suppression de 1 élément à partir de l'index 1
+var_dump($a);
+echo "<br>";
+// Optionnellement on peut ajouter un 4ème argument pour faire du remplacement
+array_splice($b, 1, 1, ['pomme', "pamplemousse"]);
+var_dump($b);
+echo "<br>";
+// On pourra fusionner des tableaux avec array_merge:
+$ab = array_merge($a, $b);
+var_dump($ab);
+echo "<br>";
+// On pourra créer un tableau à partir d'un string avec explode()
+$tab = explode(" ", "Bonjour le monde !");
+var_dump($tab);
+echo "<br>";
+// Pour trier un tableau, on utilisera la fonction sort();
+sort($ab);
+var_dump($ab);
+echo "<br>";
+/* 
+    On trouvera aussi :
+    rsort() pour trier par ordre décroissant
+
+    Et pour les tableaux associatif :
+    ksort() pour trier par clés croissant
+    krsort() pour trier par clés décroissant
+    asort() pour trier par valeur croissante
+    arsort() pour trier par valeur décroissante
+*/
+$person["nom"] = "Dupont";
+var_dump($person); echo "<br>";
+ksort($person); var_dump($person); echo "<br>";
+asort($person); var_dump($person); echo "<br>";
+
+# --------------------------------------------------
+echo "<hr><h1>Boolean</h1>";
+// Les booleans ne peuvent être que "true" ou "false"
+$t = true;
+$f = false;
+var_dump($t, $f);
+// Mais ils peuvent être obtenu de bien des façons:
+echo "<br> 5<3 : ";
+var_dump(5<3);
+echo "<br> 5>3 : ";
+var_dump(5>3);
+echo "<br> 5<=3 : ";
+var_dump(5<=3);
+echo "<br> 5>=3 : ";
+var_dump(5>=3);
+echo "<br> 3=='3' : ";
+var_dump(3=='3');
+echo "<br> 3==='3' : ";
+var_dump(3==='3');
+echo "<br> 5!='5' : ";
+var_dump(5!='5');
+echo "<br> 5<>'5' : ";
+var_dump(5<>'5');
+echo "<br> 5!=='5' : ";
+var_dump(5!=='5');
+
+
 ?>
