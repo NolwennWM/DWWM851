@@ -38,7 +38,6 @@ if($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["meal"]))
         {
             $error["username"] = "Veuillez n'utiliser que des lettres, des tirets ou des underscores";
         }
-        
     }
     // Vérification de mon champ "food"
     if(empty($_GET["food"]))
@@ -74,6 +73,7 @@ if($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["meal"]))
     if(empty($error))
     {
         // On enregistre ensuite en BDD nos informations. (voir cours suivant)
+        echo "<script>alert('formulaire validé')</script>";
     }
 }
 
@@ -82,8 +82,8 @@ require "../ressources/template/_header.php";
 ?>
 <form action="#" method="GET">
     <input type="text" name="username" placeholder="Entrez votre Nom">
-    <!-- TODO: ajouter le message d'erreur en PHP -->
-    <span class="error"></span>
+    <!-- J'affiche le message d'erreur de username -->
+    <span class="error"><?php echo $error["username"]??"" ?></span>
     <br>
     <fieldset>
         <legend>Nourriture Favorite</legend>
@@ -95,8 +95,8 @@ require "../ressources/template/_header.php";
         <br>
         <input type="radio" name="food" value="oyakodon" id="oyakodon">
         <label for="oyakodon">Oyakodon (Car j'aime l'humour noir)</label>
-        <!-- TODO: ajouter le message d'erreur en PHP -->
-        <span class="error"></span>
+        <!-- affiche le message d'erreur de food -->
+        <span class="error"><?php echo $error["food"]??"" ?></span>
     </fieldset>
     <label for="drink">Boisson Favorite</label>
     <br>
@@ -105,17 +105,19 @@ require "../ressources/template/_header.php";
         <option value="milkshake">Milkshake (aux fruits de préférence)</option>
         <option value="limonade">Limonade (J'ai besoin de sucre)</option>
     </select>
-    <!-- TODO: ajouter le message d'erreur en PHP -->
-    <span class="error"></span>
+    <!-- affiche le message d'erreur de "drink" -->
+    <span class="error"><?php echo $error["drink"]??"" ?></span>
     <br>
     <button type="submit" name="meal">Envoyer</button>
 </form>
-<!-- TODO: Ajouter une condition pour vérifier si le formulaire a été posté  -->
-<h1>Meilleurs Repas :</h1>
-<p>
-    <!-- TODO : Afficher le repas choisi -->
-    <?php echo $username ?>
-</p>
+<!-- Vérification si le formulaire s'est bien placé  -->
+<?php if(empty($error) && isset($_GET["meal"])):?>
+    <h1>Meilleurs Repas :</h1>
+    <p>
+        <!-- affichage d'un message -->
+        <?php echo "Pour $username, le meilleur repas est \"$food\" avec \"$drink\"" ?>
+    </p>
 <?php 
+endif;
 require "../ressources/template/_footer.php";
 ?>
