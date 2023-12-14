@@ -1,0 +1,57 @@
+.onlineServices
+{
+    .container
+    {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.2),rgba(255, 255, 255, 0.2)),
+        url(./images/header/headerbg.jpg);
+        background-position: right;
+        background-size: contain;
+        text-align: center;
+        @include media("desktop")
+        {
+            background-size: cover;
+        }
+        h2
+        {
+            color: $white;
+            margin-bottom: 2rem;
+        }
+        .services
+        {
+            // @include flex(space-between, center, column);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            justify-items: center;
+            gap: 1rem;
+            padding: 0 1rem;
+            @include media("tablet")
+            {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+            @include media("desktop")
+            {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 1fr;
+                justify-items: normal;
+            }
+            .card
+            {
+                color: lighten($mainColor, 40%);
+                background-color: $white;
+                padding: 1rem;
+                width: 100%;
+                @include flex(space-between, center, column);
+                &>*
+                {
+                    margin: 1rem auto;
+                }
+                .logo
+                {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}

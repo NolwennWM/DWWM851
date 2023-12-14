@@ -1,0 +1,14 @@
+.btnSuccess
+{
+    @include btns;
+    padding: 1rem ;
+}
+.btnClient
+{
+    @include btns($mainColor, $white, true)
+}
+.btnInfo
+{
+    @include btns(lighten($mainColor, 40%), $white);
+    padding: 1rem 2rem;
+}

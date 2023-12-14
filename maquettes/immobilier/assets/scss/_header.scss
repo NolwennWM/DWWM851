@@ -1,0 +1,225 @@
+header
+{
+    background-color: $mainColor;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
+        url(./images/header/headerbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include media("desktop")
+    {
+        background-image:  
+            linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
+            url(./images/header/headerhouse.png),
+            url(./images/header/headerbg.jpg);
+        background-size: cover, contain, cover;
+        background-position: center, right, center;
+    }
+    .container
+    {
+        padding-top: $navSize;
+        padding-bottom: 5rem;
+        min-height: 60vh;
+        @include media("tablet")
+        {
+            min-height: 40vh;
+        }
+        nav.navHome
+        {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: $navSize;
+            @include flex(space-between);
+            @include media("desktop")
+            {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .logo
+            {
+                height: 6rem;
+                @include flex(center, $wrap: wrap);
+                img
+                {
+                    height: 100%;
+                }
+                .logoSide
+                {
+                    @include flex(center,false ,column);
+                    :first-child
+                    {
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        color: $white;
+                        &::first-letter
+                        {
+                            text-transform: capitalize;
+                        }
+                    }
+                    :last-child
+                    {
+                        font-size: 1.7rem;
+                        font-weight: bold;
+                        color: $sideColor;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            .btns
+            {
+                @include media("desktop")
+                {
+                    @include flex();
+                    gap: 1rem;
+                    .btnClient
+                    {
+                        height: 2rem;
+                        margin-top: 1rem;
+                    }
+                }
+                .sns
+                {
+                    @include flex(false, center);
+                    height: 4rem;
+                    font-size: 1.8rem;
+                    @include media("desktop")
+                    {
+                        width: 8rem;
+                    }
+                    &>div
+                    {
+                        height: 100%;
+                        width: 33%;
+                        color: $white;
+                        @include flex(center, center);
+                        cursor: pointer;
+                    }
+                    div:nth-child(1)
+                    {
+                        background-color: $sideColor;
+                    }
+                    div:nth-child(2)
+                    {
+                        background-color: darken($sideColor, 5%);
+                    }
+                    div:nth-child(3)
+                    {
+                        background-color: darken($sideColor, 10%);
+                    }
+                }
+            }
+        }
+        .mainHeader
+        {
+            color: $white;
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem 0;
+            @include media("tablet")
+            {
+                text-align: left;
+                width: fit-content;
+                padding-left: 1rem;
+            }
+            @include media("desktop")
+            {
+                padding: 0;
+            }
+            h1
+            {
+                text-transform: uppercase;
+                color: lighten($mainColor, 40%);
+                text-shadow: 0px 0px 5px $mainColor;
+                font-size: 1.7rem;
+                @include media("tablet")
+                {
+                    font-size:2rem;
+                }
+            }
+            h2
+            {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                .left
+                {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto;
+                    .main
+                    {
+                        font-size: 5rem;
+                        grid-row: 1/3;
+                    }
+                    .top
+                    {
+                        font-size: 3rem;
+                    }
+                    .bottom
+                    {
+                        font-size: 2rem;
+                    }
+                }
+                .right
+                {
+                    @include flex(false, false, column);
+                    .top
+                    {
+                        font-size: 1.7rem;
+                        text-transform: none;
+                        @include media("tablet")
+                        {
+                            font-size: 2rem;
+                        }
+                    }
+                    .bottom
+                    {
+                        font-size: 3rem;
+                    }
+                }
+            }
+            p
+            {
+                font-size: .5rem;
+                font-weight: normal;
+            }
+            .btnSuccess{
+                display: block;
+                margin: 1rem auto;
+            }
+        }
+        nav.navigation
+        {
+            background-color: $mainColor;
+            transform: translateY(50%);
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            z-index: 5;
+            ul
+            {
+                @include flex(space-evenly, center, $wrap: wrap);
+                li
+                {
+                    list-style: none;
+                    transition: background-color .3s;
+                    &:hover
+                    {
+                        background-color: lighten($mainColor, 30%);
+                    }
+                    a
+                    {
+                        padding: 1.5rem .5rem;
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        color: $white;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+}

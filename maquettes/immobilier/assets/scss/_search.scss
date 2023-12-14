@@ -1,0 +1,39 @@
+.search
+{
+    background-color: $grey;
+    color: $mainColor;
+    .container
+    {
+        form{
+            margin: auto 1rem;
+            .flexForm
+            {
+                @include flex(space-between, $wrap: wrap);
+                .budget
+                {
+                    .price
+                    {
+                        display: inline-block;
+                        position: relative;
+                        width: 40%;
+                        &::after
+                        {
+                            position: absolute;
+                            content: "€";
+                            transform: translateX(-1rem);
+                        }
+                        input{
+                            width: 100%;
+                            padding-right: 2rem;
+                        }
+                    }
+                }
+            }
+            .btnSuccess
+            {
+                margin: 2rem auto 0 auto;
+                display: block;
+            }
+        }
+    }
+}

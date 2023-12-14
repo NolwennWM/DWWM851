@@ -1,0 +1,51 @@
+.about
+{
+    .container
+    {
+        padding: 4rem 0;
+        color: $mainColor;
+        text-align: center;
+        &>*
+        {
+            margin-bottom: 2rem;
+        }
+        .qualities
+        {
+            @include flex(space-around, center, $wrap: wrap);
+            text-transform: uppercase;
+            font-weight: bold;
+            gap: 1rem;
+            @include media("desktop")
+            {
+                gap: 0;
+            }
+            .quality
+            {
+                width: 40%;
+                height: 8rem;
+                @include flex(space-between, center, column);
+                font-size: 1rem;
+                @include media("tablet")
+                {
+                    width: 20%;
+                }
+                @include media("desktop")
+                {
+                    width: 25%;
+                }
+                .logo
+                {
+                    color: $sideColor;
+                    background-color: $mainColor;
+                    border-radius: 50%;
+                    width: fit-content;
+                    aspect-ratio: 1/1;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    padding: .5rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

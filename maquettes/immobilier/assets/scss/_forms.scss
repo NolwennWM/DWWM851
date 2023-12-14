@@ -1,0 +1,17 @@
+form
+{
+    .formGroup
+    {
+        margin-bottom: .7rem;
+        // max-width: 90%;
+        .label
+        {
+            display: block;
+            margin-bottom: .5rem;
+        }
+        .formRow
+        {
+            @include flex(space-between)
+        }
+    }
+}

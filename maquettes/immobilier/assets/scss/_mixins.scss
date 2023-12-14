@@ -1,0 +1,47 @@
+@mixin btns($bgColor: $sideColor, $textColor: $white, $border: false)
+{
+    background-color: $bgColor;
+    color: $textColor;
+    padding: .3rem 1rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: bold;
+    cursor: pointer;
+    @if($border)
+    {
+        border: 1px solid $textColor;
+    }
+    @else
+    {
+        border: none;
+    }
+}
+@mixin flex ($justify: false, $align: false, $direction: false, $wrap: false)
+{
+    display: flex;
+    @if($justify)
+    {
+        justify-content: $justify;
+    }
+    @if($align)
+    {
+        align-items: $align;
+    }
+    @if($direction)
+    {
+        flex-direction: $direction;
+    }
+    @if($wrap)
+    {
+        flex-wrap: $wrap;
+    }
+}
+@mixin media($min)
+{
+    @media screen and (min-width: map-get($breakpoints, $min)) {
+        &
+        {
+            @content;
+        }
+    }
+}

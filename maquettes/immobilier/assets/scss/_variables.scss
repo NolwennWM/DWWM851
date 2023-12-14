@@ -1,0 +1,15 @@
+$mainColor : #34193c;
+$sideColor : #a4cf37;
+$white: white;
+$grey: #e9e7ea;
+$navSize : 150px;
+$breakpoints : (
+    "tablet": 500px,
+    "desktop": 900px
+);
+%absoluteFull
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

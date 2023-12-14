@@ -1,0 +1,48 @@
+footer
+{
+    text-align: center;
+    .container
+    {
+        padding-top: 0;
+        ul.navbar
+        {
+            background-color: $mainColor;
+            @include flex(space-evenly, $wrap: wrap);
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            @include media("desktop")
+            {
+                padding: 2rem;
+            }
+            li
+            {
+                min-width: 30%;
+                max-width: 40%;
+                list-style: none;
+                @include media("desktop")
+                {
+                    min-width: fit-content;
+                    max-width: none;
+                }
+                a
+                {
+                    color: $white;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    &:hover
+                    {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .credit
+        {
+            color: $mainColor;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+}

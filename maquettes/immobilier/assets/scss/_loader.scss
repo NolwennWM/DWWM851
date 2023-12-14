@@ -1,0 +1,20 @@
+.loader
+{
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: $white;
+    z-index: 10;
+    svg
+    {
+        animation: spin 2s ease-in-out  infinite;
+    }
+}
+@keyframes spin {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

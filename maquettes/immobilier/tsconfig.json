@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "assets/js",
+        "target": "ES2022",
+        "noEmitOnError": true,
+        "strict": true
+    },
+    "files": [
+        "assets/typescript/loader.ts",
+        "assets/typescript/search.ts",
+    ]
+}
