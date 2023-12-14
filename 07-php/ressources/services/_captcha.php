@@ -82,7 +82,25 @@ $captchaStr = generate_string($characters, $strLength);
 // On sauvegarde le string en session :
 $_SESSION["captchaStr"] = $captchaStr;
 
-// TODO: ajouter les characters à l'image
+// On ajoute les characters à l'image
+for($i=0; $i < $strLength; $i++)
+{
+    // On calcul l'espacement entre les lettres
+    $letterSpace = 170/$strLength;
+    // On choisi une position initial pour les lettres :
+    $initial = 15;
+    /*  */
+    imagettftext(
+        $image,
+        24,
+        rand(-15, 15),
+        (int)($initial + $i * $letterSpace),
+        rand(25, 45),
+        $textColors[rand(0,1)],
+        $fonts[array_rand($fonts)],
+        $captchaStr[$i]
+    );
+}
 
 // On indique le type de fichier qui est rendu au navigateur :
 header("Content-type: image/png");
