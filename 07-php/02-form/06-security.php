@@ -91,9 +91,15 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['password']))
         */
         $password = password_hash($password, PASSWORD_DEFAULT);
     }
+    // Vérification CSRF :
     if(!is_CSRF_valid())
     {
         $error = "La méthode utilisée n'est pas permise !";
+    }
+    // Vérification Captcha :
+    if(!isset($_POST["captcha"], $_SESSION["captchaStr"]) || $_POST["captcha"] !== $_SESSION["captchaStr"])
+    {
+        $error = "CAPTCHA Incorrecte !";
     }
 
 }
@@ -106,6 +112,14 @@ require "../ressources/template/_header.php";
     <input type="password" name="password" placeholder="Mot de passe à hacher" required>
     <!-- Protection CSRF: -->
     <?php set_CSRF()?>
+    <!-- Protection Captcha: -->
+    <div>
+        <label for="captcha">Veuillez recopier le texte ci-dessous :</label>
+        <br>
+        <img src="../ressources/services/_captcha.php" alt="captcha">
+        <br>
+        <input type="text" name="captcha" id="captcha" pattern="^[A-Z0-9]{6}$">
+    </div>
     <input type="submit" value="Hacher">
     <span class="error"><?= $error ??""?></span>
 </form>
