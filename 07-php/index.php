@@ -4,10 +4,10 @@ require "./ressources/template/_header.php";
 ?>
     <ol class="sommaire">
         <li>
-            <h3>01 - Syntaxeeee :</h3>
+            <h3>01 - Syntaxe :</h3>
             <ol>
                 <li>
-                    <a href="./01-syntaxe/01-variable.php">Variables</a>
+                    <a href="/variables">Variables</a>
                 </li>
                 <li>
                     <a href="./01-syntaxe/02-condition.php">Conditions</a>
