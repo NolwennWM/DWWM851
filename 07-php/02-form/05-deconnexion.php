@@ -6,7 +6,7 @@
 */
 session_start();
 // On bloque l'accès à la page si il n'est pas connecté.
-require "../ressources/services/_shouldBeLogged.php";
+require __DIR__."/../ressources/services/_shouldBeLogged.php";
 shouldBeLogged(true, "/");
 // unset($_SESSION["user"])
 unset($_SESSION);

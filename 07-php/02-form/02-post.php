@@ -85,8 +85,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["meal"]))
     }
 }
 $title = "";
-require "../ressources/template/_header.php";
-?>
+require(__DIR__."/../ressources/template/_header.php");?>
 <form action="#" method="POST">
     <!-- On a ajouté la value pour ne pas avoir à la retaper à chaque fois 
     et une classe qui change selon si il y a une erreur ou non  -->
@@ -149,5 +148,4 @@ require "../ressources/template/_header.php";
     </p>
 <?php 
 endif;
-require "../ressources/template/_footer.php";
-?>
+require(__DIR__."/../ressources/template/_footer.php");?>

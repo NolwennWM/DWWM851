@@ -116,12 +116,11 @@ function deleteUser():void
     // L'utilisateur doit être connecté
     shouldBeLogged(true, "/");
     // L'utilisateur connecté est-il celui que l'on tente de supprimer
-    if(empty($_GET["id"]) || $_SESSION["idUser"] !== $_GET["id"])
+    if(empty($_GET["id"]) || $_SESSION["idUser"] != $_GET["id"])
     {
         header("Location: /");
         exit;
     }
-
     deleteUserById($_GET["id"]);
 
     unset($_SESSION);

@@ -10,27 +10,27 @@ require "./ressources/template/_header.php";
                     <a href="/variables">Variables</a>
                 </li>
                 <li>
-                    <a href="./01-syntaxe/02-condition.php">Conditions</a>
+                    <a href="/conditions">Conditions</a>
                 </li>
                 <li>
-                    <a href="./01-syntaxe/03-boucle.php">Boucles</a>
+                    <a href="/boucles">Boucles</a>
                 </li>
                 <li>
-                    <a href="./01-syntaxe/04-fonction.php">Fonctions</a>
+                    <a href="/fonctions">Fonctions</a>
                 </li>
                 <li>
-                    <a href="./01-syntaxe/05-include.php">Include</a>
+                    <a href="/include">Include</a>
                 </li>
                 <li>
-                    <a href="./01-syntaxe/06-a-session.php">session</a>
+                    <a href="/session/a">session</a>
                 </li>
                 <li>
-                    <a href="./01-syntaxe/07-date.php">Dates</a>
+                    <a href="/date">Dates</a>
                 </li>
                 <li>
-                    <a href="./01-syntaxe/08-a-header.php">header</a>
+                    <a href="/header/a">header</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="./01-syntaxe/10-a-poo.php">POO part 1</a>
                 </li>
                 <li>
@@ -38,36 +38,36 @@ require "./ressources/template/_header.php";
                 </li>
                 <li>
                     <a href="./01-syntaxe/10-c-poo.php">POO part 3</a>
-                </li>
+                </li> -->
             </ol>
         </li>
         <li>
             <h3>02 - Formulaire :</h3>
             <ol>
                 <li>
-                    <a href="./02-form/01-get.php">GET</a>
+                    <a href="/get">GET</a>
                 </li>
                 <li>
-                    <a href="./02-form/02-post.php">POST</a>
+                    <a href="/post">POST</a>
                 </li>
                 <li>
-                    <a href="./02-form/03-file.php">FILE</a>
+                    <a href="/file">FILE</a>
                 </li>
                 <li>
-                    <a href="./02-form/04-connexion.php">Connexion</a>
+                    <a href="/login">Connexion</a>
                 </li>
                 <li>
-                    <a href="./02-form/05-deconnexion.php">Déconnexion</a>
+                    <a href="/logout">Déconnexion</a>
                 </li>
                 <li>
-                    <a href="./02-form/06-security.php">Sécurité</a>
+                    <a href="/security">Sécurité</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="./02-form/07-mail.php">Mailer</a>
-                </li>
+                </li> -->
             </ol>
         </li>
-        <li>
+        <!-- <li>
             <h3>03 - CRUD :</h3>
             <ol>
                 <li>
@@ -88,8 +88,8 @@ require "./ressources/template/_header.php";
                     </ul>
                 </li>
             </ol>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
             <h3>04 - ROUTER :</h3>
             <ol>
                 <li>
@@ -110,30 +110,30 @@ require "./ressources/template/_header.php";
                     </ul>
                 </li>
             </ol>
-        </li>
+        </li> -->
         <li>
             <h3>05 - MVC :</h3>
             <ol>
                 <li>
-                    <a href="./05-mvc/">Liste Utilisateur</a>
+                    <a href="/userlist">Liste Utilisateur</a>
                 </li>
                 <li>
-                    <a href="./05-mvc/inscription">Inscription</a>
+                    <a href="/inscription">Inscription</a>
                 </li>
                 <li>
                     <h4>Exercice :</h4>
                     <ul>
                         <li>
-                        <a href="./05-mvc/connexion">Connexion</a>
+                        <a href="/connexion">Connexion</a>
                     </li>
                     <li>
-                        <a href="./05-mvc/deconnexion">Déconnexion</a>
+                        <a href="/deconnexion">Déconnexion</a>
                     </li>
                     </ul>
                 </li>
             </ol>
         </li>
-        <li>
+        <!-- <li>
             <h3>06 - POO :</h3>
             <ol>
                 <li>
@@ -154,7 +154,7 @@ require "./ressources/template/_header.php";
                     </ul>
                 </li>
             </ol>
-        </li>
+        </li> -->
     </ol>
 <?php 
 require "./ressources/template/_footer.php";

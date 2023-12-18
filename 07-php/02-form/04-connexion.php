@@ -77,8 +77,7 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['login']))
 }
 
 $title = "Connexion";
-require "../ressources/template/_header.php";
-?>
+require(__DIR__."/../ressources/template/_header.php");?>
 <form action="" method="post">
     <label for="email">Email</label>
     <input type="email" name="email" id="email">
@@ -95,5 +94,4 @@ require "../ressources/template/_header.php";
     <span class="error"><?php echo $error["login"]??""; ?></span>
 </form>
 <?php 
-require "../ressources/template/_footer.php";
-?>
+require(__DIR__."/../ressources/template/_footer.php");?>

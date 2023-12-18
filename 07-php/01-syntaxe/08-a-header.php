@@ -14,7 +14,7 @@ header("HTTP/1.1 418 I'm a teapot");
 
 if(rand(0,100)<50)
 {
-    header("Location: 08-b-header.php");
+    header("Location: /header/b");
     exit;
     /* 
         En indiquant "Location:" je provoque une redirection.
@@ -27,9 +27,9 @@ if(rand(0,100)<50)
     */
 }
 $title = "Gestion des headers de requete";
-require "../ressources/template/_header.php";
+require(__DIR__."/../ressources/template/_header.php");
 // Sans paramètre, affiche le code de la page :
 echo http_response_code();
 echo "<br> Ceci est ma page 1 !";
-require "../ressources/template/_footer.php";
+require(__DIR__."/../ressources/template/_footer.php");
 ?>

@@ -12,7 +12,7 @@
 session_start();
 
 $title = "Session page 1";
-require "../ressources/template/_header.php";
+require(__DIR__."/../ressources/template/_header.php");
 
 // On peut retrouver l'id de la session dans les cookies ou avec la fonction "session_id()"
 var_dump($_COOKIE, session_id());
@@ -28,7 +28,7 @@ echo "<br>";
 var_dump($_SESSION);
 ?>
 <br>
-<a href="./06-b-session.php">Page 2</a>
+<a href="/session/b">Page 2</a>
 <?php
-require "../ressources/template/_footer.php";
+require(__DIR__."/../ressources/template/_footer.php");
 ?>

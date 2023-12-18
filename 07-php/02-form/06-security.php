@@ -61,7 +61,7 @@
     
     Ou bien un captcha pour bloquer ou ralentir les bots.
 */
-require "../ressources/services/_csrf.php";
+// require __DIR__."/../ressources/services/_csrf.php";
 
 $error = $password = "";
 if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['password']))
@@ -104,7 +104,7 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['password']))
 
 }
 $title = "";
-require "../ressources/template/_header.php";
+require(__DIR__."/../ressources/template/_header.php");
 // var_dump(bin2hex(random_bytes(50)));
 ?>
 <h1>Formulaire pour hacher un mot de passe :</h1>
@@ -116,7 +116,7 @@ require "../ressources/template/_header.php";
     <div>
         <label for="captcha">Veuillez recopier le texte ci-dessous :</label>
         <br>
-        <img src="../ressources/services/_captcha.php" alt="captcha">
+        <img src="/captcha" alt="captcha">
         <br>
         <input type="text" name="captcha" id="captcha" pattern="^[A-Z0-9]{6}$">
     </div>
@@ -129,5 +129,4 @@ require "../ressources/template/_header.php";
     </div>
 <?php 
 endif;
-require "../ressources/template/_footer.php";
-?>,
+require(__DIR__."/../ressources/template/_footer.php");?>

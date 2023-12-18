@@ -1,6 +1,6 @@
 <?php 
 $title = "Gestion du Temps en PHP";
-require "../ressources/template/_header.php";
+require(__DIR__."/../ressources/template/_header.php");
 
 // Si on souhaite utiliser le timestamp, on pourra utiliser la fonction :
 echo time(), "<br>";
@@ -81,5 +81,4 @@ echo date("c"), "<br>";
     Date complète au format RFC 2822
 */
 echo date("r"), "<br>";
-require "../ressources/template/_footer.php";
-?>
+require(__DIR__."/../ressources/template/_footer.php");?>

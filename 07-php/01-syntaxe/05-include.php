@@ -6,7 +6,8 @@
 */
 $title = "Include";
 $mainClass = "includeNav";
-require("../ressources/template/_header.php");
+require(__DIR__."/../ressources/template/_header.php");
+
 /* 
     La seule différence entre require et include
     Est le niveau d'erreur lancé.
@@ -15,7 +16,8 @@ require("../ressources/template/_header.php");
 
     include lui lance un "warning" et le code continue.
 */
-include("../ressources/template/_nav.php");
+require(__DIR__."/../ressources/template/_nav.php");
+
 ?>
 <div>
     <p id="para1">
@@ -43,7 +45,8 @@ include("../ressources/template/_nav.php");
     Car ces derniers avant d'inclure vérifient si le fichier n'a pas déjà été inclu.
     (il sont cela dit, un peu plus gourmand en ressource.)
 */
-require("../ressources/template/_footer.php");
+require(__DIR__."/../ressources/template/_footer.php");
 // require("../ressources/template/_footer.php");
-require_once("../ressources/template/_footer.php");
+require_once(__DIR__."/../ressources/template/_footer.php");
+
 ?>

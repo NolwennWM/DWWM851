@@ -78,8 +78,7 @@ if($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["meal"]))
 }
 
 $title = "";
-require "../ressources/template/_header.php";
-?>
+require(__DIR__."/../ressources/template/_header.php");?>
 <form action="#" method="GET">
     <input type="text" name="username" placeholder="Entrez votre Nom">
     <!-- J'affiche le message d'erreur de username -->
@@ -119,5 +118,4 @@ require "../ressources/template/_header.php";
     </p>
 <?php 
 endif;
-require "../ressources/template/_footer.php";
-?>
+require(__DIR__."/../ressources/template/_footer.php");?>

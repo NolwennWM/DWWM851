@@ -10,11 +10,9 @@
     On peut ajouter à cela un url pour rediriger après quelques seconde.
     header("refresh:5; url=08-a-header.php");
 */
-header("refresh:5; url=08-a-header.php");
+header("refresh:5; url=/header/a");
 $title = "Header Page 2";
-require "../ressources/template/_header.php";
-
+require(__DIR__."/../ressources/template/_header.php");
 echo "<br> Ceci est ma page 2 !";
 
-require "../ressources/template/_footer.php";
-?>
+require(__DIR__."/../ressources/template/_footer.php");?>
