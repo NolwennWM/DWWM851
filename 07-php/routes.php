@@ -25,5 +25,15 @@ any("/userupdate", function(){
     require "./03-crud/controller/UserController.php";
     updateUser();
 });
+// Connexion
+any("/connexion", function(){
+    require "./03-crud/controller/AuthController.php";
+    connexion();
+});
+// Déconnexion
+get("/deconnexion", function(){
+    require "./03-crud/controller/AuthController.php";
+    deconnexion();
+});
 // page 404
 any("/404", "./404.php");
