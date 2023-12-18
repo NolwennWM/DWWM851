@@ -35,4 +35,17 @@ function connexionPDO(): \PDO
         throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
 }
+/**
+ * filtre le string passé en paramètre.
+ *
+ * @param string $data
+ * @return string
+ */
+function clean_data(string $data): string
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    return htmlspecialchars($data);
+    // return htmlspecialchars(stripslashes(trim($data)));
+}
 ?>

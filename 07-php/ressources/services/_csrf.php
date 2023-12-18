@@ -40,17 +40,5 @@ function is_CSRF_valid(): bool
     header($_SERVER["SERVER_PROTOCOL"] . " 405 Method Not Allowed");
     return false;
 }
-/**
- * filtre le string passé en paramètre.
- *
- * @param string $data
- * @return string
- */
-function clean_data(string $data): string
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    return htmlspecialchars($data);
-    // return htmlspecialchars(stripslashes(trim($data)));
-}
+
 ?>
