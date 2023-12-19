@@ -138,6 +138,90 @@ function deleteUser():void
  */
 function updateUser(): void
 {
+    // Si l'utilisateur n'est pas connecté ou si il n'est pas le propriétaire de ce profil, on le redirige.
+    shouldBeLogged(true, "/");
+    if(empty($_GET["id"]) || $_SESSION["idUser"] != $_GET["id"])
+    {
+        header("Location: /");
+        exit;
+    }
+    $user = getOneUserById($_GET["id"]);
+    
+    $username = $password = $email = "";
+    $error = [];
+    $regexPass = "/^(?=.*[!?@#$%^&*+-])(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{6,}$/";
+
+    if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['update']))
+    {
+        // Traitement username
+        // Si le champ est vide, je garde celui en BDD
+        if(empty($_POST["username"]))
+        {
+            $username = $user["username"];
+        }
+        else
+        {
+            $username = clean_data($_POST["username"]);
+            if(!preg_match("/^[a-zA-Z' -]{2,25}$/", $username))
+            {
+                $error["username"] = "Votre nom d'utilisateur ne peut contenir que des lettres";
+            }
+        }
+        // Traitement email
+        if(empty($_POST["email"]))
+        {
+            $email = $user["email"];
+        }
+        else
+        {
+            $email = clean_data($email);
+            if(filter_var($email, FILTER_VALIDATE_EMAIL))
+            {
+                $error["email"] = "Veuillez entrer un email valide";
+            }
+            elseif($email != $user["email"])
+            {
+                $exist = getOneUserByEmail($email);
+                if($exist)
+                {
+                    $error["email"] = "Ce email existe déjà";
+                }
+            }
+        }
+        // traitement du mot de passe
+        if(empty($_POST["password"]))
+        {
+            $password = $user["password"];
+        }
+        elseif(empty($_POST["passwordBis"]))
+        {
+            $error["passwordBis"] = "Veuillez saisir à nouveau votre mot de passe";
+        }
+        elseif($_POST["password"] != $_POST["passwordBis"])
+        {
+            $error["passwordBis"] = "Veuillez saisir le même mot de passe";
+        }
+        else
+        {
+            $password = trim($_POST["password"]);
+            if(!preg_match($regexPass, $password))
+            {
+                $error["password"] = "Veuillez saisir un mot de passe valide";
+            }
+            else
+            {
+                $password = password_hash($password, PASSWORD_DEFAULT);
+            }
+        }
+        // Envoi des données:
+        if(empty($error))
+        {
+            updateUserByID($username, $email, $password, $user["idUser"]);
+            header("Location: /");
+            exit;
+        }
+    }
+
 
     require __DIR__."/../view/user/update.php";
 }
