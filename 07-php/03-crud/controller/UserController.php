@@ -2,6 +2,7 @@
 // require __DIR__ . "/../../ressources/services/_csrf.php";
 require __DIR__ . "/../../ressources/services/_shouldBeLogged.php";
 require __DIR__ . "/../model/UserModel.php";
+require __DIR__ ."/../../ressources/services/_mailer.php";
 
 /**
  * Gère ma page listant les utilisateur
@@ -100,6 +101,7 @@ function inscription():void
         if(empty($error))
         {
             addUser($username, $email, $password);
+            $_SESSION["flash"] = sendMail("superBlog@gmail.com", $email, "Inscription", "Votre Inscription a bien été prise en compte <a href='http://localhost:8851/confirmation/'>Veuillez confirmer votre mail</a>");
             header("Location: /");
             exit;
         }
