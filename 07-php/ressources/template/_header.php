@@ -25,3 +25,13 @@
     <!-- On ouvre le body ici mais on ne le ferme pas, il sera fermé
     dans le footer. -->
     <main class="<?php echo $mainClass??"" ?>">
+        <!-- Si j'ai un message flash en session
+            Alors je l'affiche, puis je le supprime de la session -->
+        <?php if(isset($_SESSION["flash"])):?>
+            <div class="flash">
+                <?= $_SESSION["flash"] ?>
+            </div>
+        <?php 
+                unset($_SESSION["flash"]);
+            endif;
+        ?>

@@ -17,7 +17,7 @@ if($users):
                     <td><?= $u["idUser"] ?></td>
                     <td><?= $u["username"] ?></td>
                     <td>
-                        <a href="">Voir les messages</a>
+                        <a href="/blog/<?= $u["idUser"] ?>">Voir les messages</a>
                         <?php if(isset($_SESSION["idUser"]) && $_SESSION["idUser"]==$u["idUser"]):?>
                             &nbsp;|&nbsp;
                             <a href="/userupdate?id=<?= $u["idUser"] ?>">éditer l'utilisateur</a>

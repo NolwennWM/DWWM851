@@ -57,21 +57,21 @@ get("/deconnexion", function(){
     deconnexion();
 });
 // ----------------- CRUD Message ----------------------
-get("/blog", function(){
-    require "./03-crud/controller/MessageController.php";
-    // TODO appeler fonction
-});
 post("/blog/ajout", function(){
     require "./03-crud/controller/MessageController.php";
-    // TODO appeler fonction
+    createMessage();
 });
-any("/blog/update", function(){
+any('/blog/update/$id', function($id){
     require "./03-crud/controller/MessageController.php";
-    // TODO appeler fonction
+    updateMessage($id);
 });
-get("/blog/delete", function(){
+get('/blog/delete/$id', function($id){
     require "./03-crud/controller/MessageController.php";
-    // TODO appeler fonction
+    deleteMessage($id);
+});
+get('/blog/$id', function($id){
+    require "./03-crud/controller/MessageController.php";
+    readMessage($id);
 });
 // ----------------- 404 ----------------------
 // page 404
