@@ -24,7 +24,7 @@ get("/logout", "./02-form/05-deconnexion.php");
 get("/security", "./02-form/06-security.php");
 // ----------------- SERVICE ---------------
 get("/captcha", "./ressources/services/_captcha.php");
-// ----------------- CRUD ----------------------
+// ----------------- CRUD User ----------------------
 // Liste utilisateur
 get("/userlist", function(){
     require "./03-crud/controller/UserController.php";
@@ -45,6 +45,7 @@ any("/userupdate", function(){
     require "./03-crud/controller/UserController.php";
     updateUser();
 });
+// ----------------- Authentification ----------------------
 // Connexion
 any("/connexion", function(){
     require "./03-crud/controller/AuthController.php";
@@ -55,5 +56,23 @@ get("/deconnexion", function(){
     require "./03-crud/controller/AuthController.php";
     deconnexion();
 });
+// ----------------- CRUD Message ----------------------
+get("/blog", function(){
+    require "./03-crud/controller/MessageController.php";
+    // TODO appeler fonction
+});
+post("/blog/ajout", function(){
+    require "./03-crud/controller/MessageController.php";
+    // TODO appeler fonction
+});
+any("/blog/update", function(){
+    require "./03-crud/controller/MessageController.php";
+    // TODO appeler fonction
+});
+get("/blog/delete", function(){
+    require "./03-crud/controller/MessageController.php";
+    // TODO appeler fonction
+});
+// ----------------- 404 ----------------------
 // page 404
 any("/404", "./404.php");
