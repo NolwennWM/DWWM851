@@ -80,7 +80,36 @@ function deleteMessage(string $id): void
  * @return void
  */
 function updateMessage(string $id): void
-{}
+{
+    shouldBeLogged(true, "/connexion");
+    $id = (int)$id;
+    if($id === 0)
+    {
+        goToListMessage("Id inexistant");
+    }
+    $message = getMessageById($id);
+    // Si je n'ai pas de message à cet id ou si l'utilisateur connecté n'est pas son auteur, alors on redirige.
+    if(!$message || $message["idUser"] != $_SESSION["idUser"])
+    {
+        goToListMessage("Impossible d'éditer ce message");
+    }
+
+    $m = "";
+    if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['editMessage']))
+    {
+        if(empty($_POST["message"]))
+        {
+            $m = $message["message"];
+        }
+        else
+        {
+            $m = clean_data($_POST["message"]);
+        }
+        updateMessageById($id,$m);
+        goToListMessage("Message édité");
+    }
+    require __DIR__ ."/../view/message/updateMessage.php";
+}
 /**
  * Redirige vers la liste des messages de l'utilisateur connecté
  * Peut optionnellement prendre un message flash en paramètre.
