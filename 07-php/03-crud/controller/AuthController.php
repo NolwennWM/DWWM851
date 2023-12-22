@@ -1,6 +1,7 @@
 <?php 
 require __DIR__ . "/../../ressources/services/_shouldBeLogged.php";
-require __DIR__ . "/../model/UserModel.php";
+// require __DIR__ . "/../model/UserModel.php";
+require __DIR__ . "/../model/UserMongoModel.php";
 
 function connexion()
 {

@@ -1,7 +1,8 @@
 <?php 
 // require __DIR__ . "/../../ressources/services/_csrf.php";
 require __DIR__ . "/../../ressources/services/_shouldBeLogged.php";
-require __DIR__ . "/../model/UserModel.php";
+// require __DIR__ . "/../model/UserModel.php";
+require __DIR__ ."/../model/UserMongoModel.php";
 require __DIR__ ."/../../ressources/services/_mailer.php";
 
 /**
