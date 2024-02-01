@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<template id="tableRow">
+    <tr>
+        <td class="id"></td>
+        <td class="username"></td>
+        <td>
+            <a href="/api/blog?id=">Voir</a>
+            &nbsp;|&nbsp;
+            <a class="limited" href="/api/user/update?id=">Éditer</a>
+            &nbsp;|&nbsp;
+            <a class="limited" href="/api/user/delete?id=">Supprimer</a>
+        </td>
+    </tr>
+</template>

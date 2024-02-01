@@ -73,6 +73,14 @@ get('/blog/$id', function($id){
     require "./03-crud/controller/MessageController.php";
     readMessage($id);
 });
+// ----------------- API ----------------------
+any('/api/user', '/04-api/controller/UserController.php');
+get("/api", function(){
+    require "./04-api/front/index.html";
+});
+get('/api/$any', function(){
+    require "./04-api/front/index.html";
+});
 // ----------------- 404 ----------------------
 // page 404
 any("/404", "./404.php");
